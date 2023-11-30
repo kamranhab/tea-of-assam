@@ -10,7 +10,7 @@ function FeaturedProduct() {
       {items.map((elem, index) => {
         const { brandName, image, name, price, category, size } = elem;
         return (
-          <div key={index} className="product" style={index === 1 || index === 4 ?{ backgroundColor:'#fafafa31'} : null}>
+          <div key={index} className="product" style={index === 1 || index === 4 ?{ backgroundColor:'#40342F'} : null}>
             <img src={image} alt="product-image" className="product-image"/>
             <div className="product-details">
             <h3 className="brand-name">{brandName}</h3>
