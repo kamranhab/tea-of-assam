@@ -1,0 +1,30 @@
+.featured-container{
+ background-color:#d0c7c2;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+
+.featured-heading{
+    margin: 4vh 0;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.featured-text{
+ color: #c3c3c3;
+ font-size: 1.2rem;
+ font-weight: 400;
+}
+
+.f-show-more{
+  color: #c3c3c3;
+  font-size: 1.2rem;
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+
