@@ -1,7 +1,6 @@
 
 .product{
-    border: 2px solid rgba(255, 255, 255, 0.058);
-    border-radius: 10px;
+    border-radius: 20px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -9,7 +8,11 @@
 }
 
 .product:hover{
-   background-color:#a7897b;
+   box-shadow: 5px 5px 30px 2px rgba(0, 0, 0, 0.086);   
+   border-radius: 20px;
+   border: 0;
+   background-color:#fafafa31 ;
+   transition:0.8s;
 }
 
 .featured-products{
@@ -27,10 +30,15 @@
 
   .brand-name{
     color: #fff;
+    font-weight: 200;
+    font-size: 0.8rem;
   }
 
   .product-name{
+    margin: 8px 8px 8px 0;
     color:#fff;
+    font-weight: 300;
+    font-size: 1.3rem;
   }
 
   .product-image{
@@ -39,27 +47,41 @@
   }
 
   .product-category{
-    color: #fff;
+    color: #7f7f7fac;
+    font-weight: 200;
+    font-size: 1rem;
+    margin: 0 8px 8px 0;
+    
   }
 
   .product-price{
-    color: #fff;
+    color: #e13816;
+    font-weight: 80;
+    margin: 0 8px 8px 0;
+
   }
 
   .product-size{
     color: #fff;
+    font-weight: 80;
+    margin: 0 8px 8px 0;
+    font-size: 1rem;;
+
   }
 
   .add-to-cart{
     color: #e1e1e1;
-    backdrop-filter: blur(8px) saturate(120%);
-    -webkit-backdrop-filter: blur(10px) saturate(120%);
-    background-color: rgba(255, 255, 255, 0.197);
+    background-color: #89b8b700;
+    box-shadow: 2px 2px 20px -1px rgba(0, 0, 0, 0.125);
     border: none;
-    border-right: 1px solid rgba(209, 213, 219, 0.3);
-    border-bottom: 1px solid rgba(209, 213, 219, 0.3);
+    border-radius: 10px;
     padding: 8px;
-    border-radius: 8px;
-    font-size: 1rem;
-    margin-top: 10px;
+    font-size: 0.9rem;
+    margin:0 8px 0 0;
+  }
+  .add-to-cart:hover{
+    color:rgba(55, 54, 54, 0.536);
+    background-color: #ffffff13;
+    transition: 0.7s;
+    cursor: pointer;
   }
