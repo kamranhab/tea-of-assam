@@ -30,15 +30,15 @@
   } */
 
   .brand-name{
-    color: #fff;
+    color: #d7d7d7;
     font-weight: 200;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .product-name{
     margin: 8px 8px 8px 0;
-    color:#fff;
-    font-weight: 300;
+    color:#A7897B;
+    font-style:bold;
     font-size: 1.3rem;
   }
 
@@ -48,7 +48,7 @@
   }
 
   .product-category{
-    color: #7f7f7fac;
+    color: #d0d0d0ac;
     font-weight: 200;
     font-size: 1rem;
     margin: 0 8px 8px 0;
@@ -79,10 +79,11 @@
     padding: 8px 15px;
     font-size: 0.9rem;
     margin:0 8px 0 0;
+    text-transform: uppercase;
   }
   .add-to-cart:hover{
     color:#000000;
-    background-color: #92FF69;
+    background-color: #ffffff;
     transition: 0.7s;
     cursor: pointer;
   }

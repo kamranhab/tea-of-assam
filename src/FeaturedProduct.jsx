@@ -16,8 +16,8 @@ function FeaturedProduct() {
             <h3 className="brand-name">{brandName}</h3>
             <h2 className="product-name">{name}</h2>
             <h3 className="product-category">{category}</h3>
-            <h3 className="product-price">{price}</h3>
             <h3 className="product-size">{size}</h3>
+            <h3 className="product-price">{price}</h3>
             <button className="add-to-cart">Add to Cart</button>
             </div>
           </div>

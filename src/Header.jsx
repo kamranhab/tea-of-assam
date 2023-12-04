@@ -26,7 +26,10 @@ function Header(){
             <div className="head-icons-container">
                 <img src= {searchIcon} alt="" className="search-icon head-icons" />
                 <img src= {accountIcon} alt="" className="account-icon head-icons" />
+                <span className="cart-icon-container">
                 <img src= {cartIcon} alt="" className="cart-icon head-icons" />
+                <span className="cart-counter">0</span>
+                </span>
             </div>
         </header>
         </div>

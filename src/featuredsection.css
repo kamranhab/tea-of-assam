@@ -12,25 +12,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+   
 }
 
 .featured-text{
  color: #e5e5e5;
  font-size: 1.2rem;
  font-weight: 400;
+ text-transform: uppercase;
 }
 
 .f-show-more{
   color: #e5e5e5;
+  text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: 400;
-  border-bottom: 1.5px solid transparent; 
-  transition: border-bottom 0.5s;
-  text-decoration: underline;
 }
 
 .f-show-more:hover{
-  border-bottom: 1.5px solid currentColor;
   cursor:pointer}
 
 

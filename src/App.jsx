@@ -1,4 +1,5 @@
 import FeaturedSection from './FeaturedSection.jsx';
+import GiftSection from './GiftSection.jsx';
 import Header from './Header.jsx'
 import HeroSection from './HeroSection.jsx'
 import bg from './assets/bg2.mp4'
@@ -16,6 +17,7 @@ function App() {
         <HeroSection/>
         </div>
         <FeaturedSection/>
+        <GiftSection/>
         
     </>
   );
