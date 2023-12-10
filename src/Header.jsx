@@ -4,14 +4,13 @@ import searchIcon from './assets/search.svg'
 import accountIcon from './assets/account.svg'
 import cartIcon from './assets/cart.svg'
 
-function Header(){
- 
-    return(
-        <div className="header-container">
+function Header({ cartCount }) {
+    return (
+      <div className="header-container">
         <header className="header">
-            <img src={headerLogo} alt="" className="header-logo"/>
-            <ul className="navigation">
-                <li>Home</li>
+          <img src={headerLogo} alt="" className="header-logo" />
+          <ul className="navigation">
+               <li>Home</li>
                 <li>All Products</li>
                 <li>Wholesale</li>
                 <li className="pages">Company
@@ -22,18 +21,18 @@ function Header(){
                         <li><a href="#pages3">Terms and Policies</a></li>
                     </ul>
                 </li>
-            </ul>
-            <div className="head-icons-container">
-                <img src= {searchIcon} alt="" className="search-icon head-icons" />
-                <img src= {accountIcon} alt="" className="account-icon head-icons" />
-                <span className="cart-icon-container">
-                <img src= {cartIcon} alt="" className="cart-icon head-icons" />
-                <span className="cart-counter">0</span>
-                </span>
-            </div>
+          </ul>
+          <div className="head-icons-container">
+            <img src={searchIcon} alt="" className="search-icon head-icons" />
+            <img src={accountIcon} alt="" className="account-icon head-icons" />
+            <span className="cart-icon-container">
+              <img src={cartIcon} alt="" className="cart-icon head-icons" />
+              <span className="cart-counter">{cartCount}</span>
+            </span>
+          </div>
         </header>
-        </div>
-    )
-}
+      </div>
+    );
+  }
 
 export default Header 
