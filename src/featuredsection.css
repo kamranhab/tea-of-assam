@@ -1,5 +1,5 @@
 .featured-container{
- background-color:#89b8b7;
+ background-color:#050505;
  display: flex;
  justify-content: center;
  align-items: center;
@@ -12,24 +12,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+   
 }
 
 .featured-text{
- color: #000000;
+ color: #e5e5e5;
  font-size: 1.2rem;
  font-weight: 400;
+ text-transform: uppercase;
 }
 
 .f-show-more{
-  color: #000000;
+  color: #e5e5e5;
+  text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: 400;
-  border-bottom: 1.5px solid transparent; 
-  transition: border-bottom 0.5s;
 }
 
 .f-show-more:hover{
-  border-bottom: 1.5px solid currentColor;
   cursor:pointer}
 
 

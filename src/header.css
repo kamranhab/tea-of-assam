@@ -1,57 +1,81 @@
-.header-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1vh;
-
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1vh;
 }
-.header{
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 10vh;
-  }
 
-  .header-logo{
-    width:12rem;
-  }
+.header {
+  width: 84%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 10vh;
+  position: fixed;
+  top: 8px; 
+  /* glass */
+    backdrop-filter: blur(6px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    background-color: #ffffff00;
+    border-right: 1px solid rgba(209, 213, 219, 0.3);
+    border-bottom: 1px solid rgba(209, 213, 219, 0.3);
+  /* glass */
+  z-index: 1000; 
+  padding: 0 20px;
+  border-radius: 50px;
+}
 
-  .navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    margin-top: 0;
-  }
+.header-logo {
+  width: 12rem;
+}
 
-  .navigation>li{
-    margin: 0 0.6rem;
-    color: #f9f9f9;
-    font-weight: 500;
-    font-size: 1.05rem;
-  }
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin-top: 0;
+}
 
-  
-  .dropdown-content {
-    list-style-type: none;
-    display: none;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    position: absolute;
-    z-index: 1;
-  }
-  
-  .pages:hover .dropdown-content {
-    display: block;
-  }
-  
-  .head-icons{
-    margin: 0 0.6rem;
-    height: 5.3vh;
-    
-  }
+.navigation>li {
+  margin: 0 0.6rem;
+  color: #f9f9f9;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
 
+.dropdown-content {
+  list-style-type: none;
+  display: none;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  z-index: 1;
+}
 
-  
+.pages:hover .dropdown-content {
+  display: block;
+}
+
+.head-icons {
+  margin: 0 0.7rem;
+  height: 3.6vh;
+  cursor: pointer;
+}
+
+.cart-icon-container {
+  position: relative;
+}
+
+.cart-counter {
+  background-color: #009245;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 3px 5px 3px 5px;
+  font-size: 12px;
+  position: absolute;
+  right: -4px;
+  bottom: 20px;
+}
