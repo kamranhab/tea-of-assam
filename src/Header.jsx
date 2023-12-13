@@ -4,7 +4,7 @@ import searchIcon from './assets/search.svg'
 import accountIcon from './assets/account.svg'
 import cartIcon from './assets/cart.svg'
 
-function Header({ cartCount }) {
+function Header({ cartCount, setCartVisible }) {
     return (
       <div className="header-container">
         <header className="header">
@@ -25,7 +25,7 @@ function Header({ cartCount }) {
           <div className="head-icons-container">
             <img src={searchIcon} alt="" className="search-icon head-icons" />
             <img src={accountIcon} alt="" className="account-icon head-icons" />
-            <span className="cart-icon-container">
+            <span className="cart-icon-container" onClick={() => setCartVisible(preview => !preview)}>
               <img src={cartIcon} alt="" className="cart-icon head-icons" />
               <span className="cart-counter">{cartCount}</span>
             </span>

@@ -4,9 +4,11 @@ import GiftSection from './GiftSection.jsx';
 import Header from './Header.jsx'
 import HeroSection from './HeroSection.jsx'
 import bg from './assets/bg2.mp4'
+import CartPop from './CartPop.jsx';
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
+  const [cartVisible, setCartVisible] = useState(false);
 
   const addToCart = () => {
     setCartCount(cartCount + 1);
@@ -15,11 +17,12 @@ function App() {
   return (
     <>
       <div className="main-container">
-        <video id="video-background" autoPlay muted loop>
+        <video id="video-background" autoPlay muted loop preload="auto">
           <source src={bg} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <Header cartCount={cartCount} />
+        <Header cartCount={cartCount} setCartVisible={setCartVisible} />
+        {cartVisible && <CartPop />}
         <HeroSection />
       </div>
       <FeaturedSection addToCart={addToCart} />

@@ -1,7 +1,6 @@
-import { useState } from 'react';
-import './featuredproduct.css';
-import Products from './Products.jsx';
-
+import { useState } from "react";
+import "./featuredproduct.css";
+import Products from "./Products.jsx";
 
 function FeaturedProduct({ addToCart }) {
   const [items, setItems] = useState(Products);
@@ -13,7 +12,13 @@ function FeaturedProduct({ addToCart }) {
   return (
     <div className="featured-products">
       {items.map((elem, index) => (
-        <div key={index} className="product" style={index === 1 || index === 4 ? { backgroundColor: '#40342F' } : null}>
+        <div
+          key={index}
+          className="product"
+          style={
+            index === 1 || index === 4 ? { backgroundColor: "#40342F" } : null
+          }
+        >
           <img src={elem.image} alt="product-image" className="product-image" />
           <div className="product-details">
             <h3 className="brand-name">{elem.brandName}</h3>
@@ -30,6 +35,5 @@ function FeaturedProduct({ addToCart }) {
     </div>
   );
 }
-
 
 export default FeaturedProduct;
