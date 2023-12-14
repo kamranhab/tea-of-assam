@@ -16,13 +16,14 @@ function App() {
 
   return (
     <>
+      {cartVisible && <CartPop setCartVisible={setCartVisible}/>}
       <div className="main-container">
         <video id="video-background" autoPlay muted loop preload="auto">
           <source src={bg} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <Header cartCount={cartCount} setCartVisible={setCartVisible} />
-        {cartVisible && <CartPop />}
+        
         <HeroSection />
       </div>
       <FeaturedSection addToCart={addToCart} />
