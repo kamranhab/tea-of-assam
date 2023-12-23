@@ -1,12 +1,37 @@
 .bsearch,
-.baccount {
-  width: 1rem;
+.baccount,.bham,.bhome{
+  width: 3rem;
+}
+.bbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.bicons-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.bhamburg{
+    
+}
+.dropup-menu{
+        position: absolute;
+        bottom: 100%;
+        width: 1000px;
+        z-index: 10000;
+        background-color: #927b5b;
+        list-style: none;
+        padding: 10px;
+
 }
 
-
 .bhamburg>ul {
-  display: none;
   
+
 }
 
 
@@ -22,6 +47,7 @@
 
 @media only screen and (max-width:500px){
     .bottom-container{
-        display: block;
+        display: flex;
     }
+    .bhamburg{}
 }
