@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 10vh;
+  height: 10vh;
   position: fixed;
   top: 8px; 
   /* glass */
@@ -72,10 +72,50 @@
   background-color: #009245;
   text-align: center;
   color: #ffffff;
-  border-radius: 50%;
-  padding: 3px 5px 3px 5px;
+  border-radius: 100%;
+  padding: 3px 6px 3px 6px;
   font-size: 12px;
   position: absolute;
   right: -4px;
   bottom: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .header-container {
+  width: 100%;
+  }
+  .header{
+  width:90%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  }
+  .header-logo{
+    width: 5rem;
+  }
+  .navigation{
+    width: 1rem ;
+  }
+  .head-icons-container{
+    width: 5rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .navigation{
+    display: none;
+  }
+  .head-icons-container{
+    width: auto;
+  }
+  .account-icon{
+    display: none;
+  }
+  .search-icon{
+    display: none;
+  }
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
+  
 }

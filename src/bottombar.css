@@ -1,0 +1,27 @@
+.bsearch,
+.baccount {
+  width: 1rem;
+}
+
+
+.bhamburg>ul {
+  display: none;
+  
+}
+
+
+.bottom-container {
+  display: none;
+  height: 6vh;
+  position: fixed;
+  bottom: 0; /* Position it at the bottom of the viewport */
+  width: 100%;
+  z-index: 10000;
+  background-color: #927b5b; 
+}
+
+@media only screen and (max-width:500px){
+    .bottom-container{
+        display: block;
+    }
+}

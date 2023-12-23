@@ -5,6 +5,7 @@ import Header from './Header.jsx'
 import HeroSection from './HeroSection.jsx'
 import bg from './assets/bg2.mp4'
 import CartPop from './CartPop.jsx';
+import BottomBar from './BottomBar.jsx';
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -28,6 +29,7 @@ function App() {
       </div>
       <FeaturedSection addToCart={addToCart} />
       <GiftSection addToCart={addToCart} />
+      <BottomBar/>
     </>
   );
 }

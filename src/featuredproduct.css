@@ -87,3 +87,12 @@
     transition: 0.7s;
     cursor: pointer;
   }
+  @media only screen and (max-width: 768px) {
+    .featured-products{
+      margin: 2vh 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap:0.8vw;
+    }
+  
+  }
