@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 10vh;
 }
 .gift-container{
     width:80%;
@@ -77,8 +78,8 @@
   }
 
   .gift-image{
-    width: 17vw;
-    padding: 0 30px 0 0;
+    width: 12vw;
+    padding: 5px 30px 5px 0;
     border-radius: 10px 0 0 10px;
    
   }
@@ -145,6 +146,8 @@
     }
     .gift-product{
       width: 33vw;
+      height: 20vh;
+  
     }
     .gift-info{
       width: 90%;
@@ -181,12 +184,20 @@
       width: 24vw;
     }
     .gift-container{
-      display: block;
+      flex-direction: column;
     }
   }
-  @media only screen and (max-width: 768px){
+  @media only screen and (max-width: 600px){
     .gift-image{
-      width: 32vw;
+      width:36vw;
+    
+    }
+    .gift-info{
+      padding: 15px 5px;
+      width: 65vw;
+    }
+    .gift-product{
+      width:65vw;
     }
 
   }
