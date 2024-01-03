@@ -8,7 +8,7 @@ function CartPop({ cartItems = [], setCartVisible, onUpdateQuantity, onDelete })
     return total + item.quantity * itemPrice;
   }, 0);
 
-  return (
+  return ( 
     <>
       <div className="popupcart">
         <div className="popup-head">

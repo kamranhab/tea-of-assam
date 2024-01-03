@@ -8,10 +8,11 @@ const Products=[
         name:'Green Tea',
         price:'$20.00',
         category: 'Tea',
-        size:'10oz'
-    },
+        size:'10oz',
 
-    {   
+    }, 
+
+    {    
         id: 2,
         brandName:'TATA',
         image:greenTea,
@@ -25,7 +26,7 @@ const Products=[
         id: 3,
         brandName:'TATA',
         image:greenTea,
-        name:'Tea',
+        name:'Faisal',
         price:'$30.00',
         category: 'Tea',
         size:'10oz'
@@ -60,7 +61,7 @@ const Products=[
         category:'Tea',
         size:'10oz'
     },
-
+    
 ]
 
 export default Products

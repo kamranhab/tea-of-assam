@@ -5,17 +5,30 @@ import Header from './Header.jsx'
 import HeroSection from './HeroSection.jsx'
 import bg from './assets/bg2.mp4'
 import CartPop from './CartPop.jsx';
-import BottomBar from './BottomBar.jsx';
+import BottomBar from './BottomBar.jsx';  
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const [cartVisible, setCartVisible] = useState(false);
 
   const addToCart = (product) => {
-    const existingProduct = cartItems.find(item => item.id === product.id);
+    const existingProduct = cartItems.find(elem => elem.id === product.id);
+    console.log(product.id);
     if (existingProduct) {
-      setCartItems(cartItems.map(item => 
-        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      setCartItems(cartItems.map(elem => 
+        elem.id === product.id ? { ...elem, quantity: elem.quantity + 1 } : elem
+      ));
+    } else {
+      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+    }
+  };
+
+  const giftAddToCart = (product) => {
+    const existingGiftProduct = cartItems.find(elem => elem.id === product.id);
+    console.log(product.id);
+    if (existingGiftProduct) {
+      setCartItems(cartItems.map(elem => 
+        elem.id === product.id ? { ...elem, quantity: elem.quantity + 1 } : elem
       ));
     } else {
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
@@ -43,7 +56,7 @@ function App() {
         <Header cartCount={cartItems.length} setCartVisible={setCartVisible} />
         <HeroSection />
         <FeaturedSection addToCart={addToCart} />
-        <GiftSection addToCart={addToCart} />
+        <GiftSection giftAddToCart={giftAddToCart} />
         <BottomBar/>
       </div>
     </>

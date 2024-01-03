@@ -6,7 +6,7 @@ function FeaturedProduct({ addToCart }) {
   const [items, setItems] = useState(Products);
 
   return (
-    <div className="featured-products">
+    <div className="featured-products"> 
       {items.map((item) => (
         <div key={item.id} className="product">
           <img className='product-image'src={item.image} alt={item.name} />
