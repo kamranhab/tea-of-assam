@@ -9,12 +9,12 @@ function FeaturedProduct({ addToCart }) {
     <div className="featured-products">
       {items.map((item) => (
         <div key={item.id} className="product">
-          <img src={item.image} alt={item.name} />
+          <img className='product-image'src={item.image} alt={item.name} />
           <div className="product-details">
-            <h3>{item.name}</h3>
-            <p>{item.size}</p>
-            <p>{item.price}</p>
-            <button onClick={() => addToCart(item)}>Add to Cart</button>
+            <h3 className="product-name">{item.name}</h3>
+            <p className="product-size">{item.size}</p>
+            <p className="product-price">{item.price}</p>
+            <button className="add-to-cart" onClick={() => addToCart(item)}>Add to Cart</button>
           </div>
         </div>
       ))}
