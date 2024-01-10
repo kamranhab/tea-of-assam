@@ -7,7 +7,7 @@
 }
 .gift-container{
     width:80%;
-    background:url('./assets/giftbg2.jpg');
+    background:url('../assets/giftbg2.jpg');
     background-size: cover;
     background-position: center;
     margin: 40px;

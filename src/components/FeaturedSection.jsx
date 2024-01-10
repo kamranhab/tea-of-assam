@@ -1,4 +1,4 @@
-import './featuredsection.css'
+import '../styles/featuredsection.css'
 import FeaturedProduct from './FeaturedProduct.jsx'
 
 function FeaturedSection({ addToCart }) {
