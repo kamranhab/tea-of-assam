@@ -1,5 +1,5 @@
-import "./giftsection.css";
-import GiftProducts from "./GiftProducts";
+import "../styles/giftsection.css";
+import GiftProducts from "../data/GiftProducts";
 import { useState } from "react";
 
 function GiftSection({ giftAddToCart }) {

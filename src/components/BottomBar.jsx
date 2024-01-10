@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './bottombar.css';
-import bhomeIcon from './assets/bhome.png'
-import bsearchIcon from './assets/search.svg';
-import baccountIcon from './assets/baccount.png';
-import bhamburgIcon from './assets/bham.png'
+import '../styles/bottombar.css';
+import bhomeIcon from '../assets/bhome.png'
+import bsearchIcon from '../assets/search.svg';
+import baccountIcon from '../assets/baccount.png';
+import bhamburgIcon from '../assets/bham.png'
 
 function BottomBar() {
 

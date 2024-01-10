@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import FeaturedSection from './FeaturedSection.jsx';
-import GiftSection from './GiftSection.jsx';
-import Header from './Header.jsx'
-import HeroSection from './HeroSection.jsx'
+import FeaturedSection from './components/FeaturedSection.jsx';
+import GiftSection from './components/GiftSection.jsx';
+import Header from './components/Header.jsx'
+import HeroSection from './components/HeroSection.jsx'
 import bg from './assets/bg2.mp4'
-import CartPop from './CartPop.jsx';
-import BottomBar from './BottomBar.jsx';  
+import CartPop from './components/CartPop.jsx';
+import BottomBar from './components/BottomBar.jsx';  
 
 function App() {
   const [cartItems, setCartItems] = useState([]);

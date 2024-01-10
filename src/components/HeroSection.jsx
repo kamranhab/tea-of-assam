@@ -1,4 +1,4 @@
-import './herosection.css'
+import '../styles/herosection.css'
 
 function HeroSection(){
     return(

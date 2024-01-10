@@ -1,4 +1,4 @@
-import greenTea from './assets/greentea.webp'
+import greenTea from '../assets/greentea.webp'
 
 const Products=[
     {   

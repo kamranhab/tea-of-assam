@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./featuredproduct.css";
-import Products from "./Products.jsx";
+import "../styles/featuredproduct.css";
+import Products from "../data/Products.jsx";
 
 function FeaturedProduct({ addToCart }) {
   const [items, setItems] = useState(Products);

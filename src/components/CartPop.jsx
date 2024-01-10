@@ -1,5 +1,5 @@
-import "./cartpop.css";
-import CartProduct from "./CartProduct";
+import "../styles/cartpop.css";
+import CartProduct from "./CartProduct.jsx";
 
 function CartPop({ cartItems = [], setCartVisible, onUpdateQuantity, onDelete }) {
   const itemCount = cartItems.reduce((count, item) => count + item.quantity, 0);

@@ -1,8 +1,8 @@
-import './header.css'
-import headerLogo from './assets/headerlogo.png'
-import searchIcon from './assets/search.svg'
-import accountIcon from './assets/account.svg'
-import cartIcon from './assets/cart.svg'
+import '../styles/header.css'
+import headerLogo from '../assets/headerlogo.png'
+import searchIcon from '../assets/search.svg'
+import accountIcon from '../assets/account.svg'
+import cartIcon from '../assets/cart.svg'
 
 function Header({ cartCount, setCartVisible }) {
     return (

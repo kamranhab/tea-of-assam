@@ -1,5 +1,5 @@
-import giftImg1 from './assets/giftimage1.webp'
-import giftImg2 from './assets/giftimage2.webp'
+import giftImg1 from '../assets/giftimage1.webp'
+import giftImg2 from '../assets/giftimage2.webp'
 
 const GiftProducts=[
     {   
