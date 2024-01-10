@@ -41,11 +41,10 @@
   position: fixed;
   bottom: 0; /* Position it at the bottom of the viewport */
   width: 100%;
-  z-index: 10000;
   background-color: #927b5b; 
 }
 
-@media only screen and (max-width:500px){
+@media only screen and (max-width:600px){
     .bottom-container{
         display: flex;
     }

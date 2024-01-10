@@ -1,15 +1,12 @@
 import "./giftsection.css";
-import giftImg1 from './assets/giftimage1.webp'
-import giftImg2 from './assets/giftimage2.webp'
+import GiftProducts from "./GiftProducts";
+import { useState } from "react";
 
-function GiftSection({ addToCart }) {
+function GiftSection({ giftAddToCart }) {
   const giftSubtitles =
     "As the coffee shop market becomes more popular, the number of cafe websites is growing. The internet and social media play an important role in finding new customers.";
-  
-    const handleAddToCart = () => {
-      addToCart(); 
-    }
-    
+
+  const [items, setItems] = useState(GiftProducts);
 
   return (
     <div className="gift-main-container">
@@ -21,30 +18,25 @@ function GiftSection({ addToCart }) {
           </h2>
           <p className="gift-subtitles">{giftSubtitles}</p>
         </div>
-        <div className="gift-products">
-          <div className="gift-product">
-            <img src={giftImg1} alt="gift-image" className="gift-image" />
-            <div className="gift-details">
-              <h2 className="gift-name">Gift Box</h2>
-              <h3 className="gift-size">3 items</h3>
-              <h3 className="gift-price">$100.00</h3>
-              <button className="add-to-cart" onClick={handleAddToCart}>
-                Add to Cart
-              </button>
-            </div>
-          </div>
 
-          <div className="gift-product">
-            <img src={giftImg2} alt="gift-image" className="gift-image" />
-            <div className="gift-details">
-              <h2 className="gift-name">Tea Bundle</h2>
-              <h3 className="gift-size">3 items</h3>
-              <h3 className="gift-price">$100.00</h3>
-              <button className="add-to-cart" onClick={addToCart}>
-                Add to Cart
-              </button>
+        <div className="gift-products">
+          {items.map((item) => (
+            <div key={item.id} className="gift-product">
+              <img src={item.image} alt="gift-image" className="gift-image" />
+              <div className="gift-details">
+                <h2 className="gift-name">{item.name}</h2>
+                <h3 className="gift-size">{item.size}</h3>
+                <h3 className="gift-price">{item.price}</h3>
+
+                <button
+                  className="add-to-cart"
+                  onClick={() => giftAddToCart(item)}
+                >
+                  Add to Cart
+                </button>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
