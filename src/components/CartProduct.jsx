@@ -1,4 +1,5 @@
 import "../styles/cartpop.css"
+import deleteImg from '../assets/delete.png'
 
 function CartProduct({ item, index, onUpdateQuantity, onDelete }) {
     const { image, name, price, size, quantity } = item;
@@ -27,7 +28,7 @@ function CartProduct({ item, index, onUpdateQuantity, onDelete }) {
             </div>
             <div className="price-delete">
                 <p>${(parseFloat(price.substring(1)) * quantity).toFixed(2)}</p>
-                <button onClick={handleDelete}>Delete</button>
+                <img src={deleteImg} onClick={handleDelete}/>
             </div>
         </div>
     );

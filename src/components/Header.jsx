@@ -3,22 +3,23 @@ import headerLogo from '../assets/headerlogo.png'
 import searchIcon from '../assets/search.svg'
 import accountIcon from '../assets/account.svg'
 import cartIcon from '../assets/cart.svg'
+import { Link } from 'react-router-dom'
 
 function Header({ cartCount, setCartVisible }) {
     return (
       <div className="header-container">
         <header className="header">
-          <img src={headerLogo} alt="" className="header-logo" />
+          <Link to='/'><img src={headerLogo} alt="" className="header-logo" /></Link>
           <ul className="navigation">
-               <li>Home</li>
-                <li>All Products</li>
-                <li>Wholesale</li>
+               <li><Link to='/'>Home</Link></li>
+                <li><Link to='/all-products'>All Products</Link></li>
+                <li><Link to='/wholesale'>Wholesale</Link></li>
                 <li className="pages">Company
                     <ul className="dropdown-content">
      
-                        <li><a href="#pages1">About Us</a></li>
-                        <li><a href="#pages2">Contact</a></li>
-                        <li><a href="#pages3">Terms and Policies</a></li>
+                        <li><Link to='/about'>About Us</Link></li>
+                        <li><Link to='/contact'>Contact</Link></li>
+                        <li><Link to='/policies'>Terms and Policies</Link></li>
                     </ul>
                 </li>
           </ul>

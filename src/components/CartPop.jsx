@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/cartpop.css";
 import CartProduct from "./CartProduct.jsx";
 
@@ -27,7 +28,7 @@ function CartPop({ cartItems = [], setCartVisible, onUpdateQuantity, onDelete })
                   <p>Subtotal</p>
                   <p>${subtotal.toFixed(2)} USD</p>
               </div>
-              <button className="buy">Proceed to Buy</button>
+              <button className="buy"><Link to='/checkout'>Proceed to Buy</Link></button>
           </div>
         </div>
       </div>
