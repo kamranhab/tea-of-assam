@@ -28,7 +28,7 @@ function CartPop({ cartItems = [], setCartVisible, onUpdateQuantity, onDelete })
                   <p>Subtotal</p>
                   <p>${subtotal.toFixed(2)} USD</p>
               </div>
-              <button className="buy"><Link to='/checkout'>Proceed to Buy</Link></button>
+              <Link to='/checkout'> <button className="buy">Proceed to Buy</button></Link>
           </div>
         </div>
       </div>

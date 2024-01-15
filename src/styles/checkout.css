@@ -1,5 +1,194 @@
-.ch-container{
-    background-color:#000;
-    height: 100vh;
-    color: #fff;
+.checkout-form {
+  display: flex;
+  justify-content: center;
+}
+
+.checkout-form label {
+  display: block;
+  color: #333;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#mr {
+  margin-right: 5px;
+}
+
+#ml {
+  margin-left: 5px;
+}
+
+
+.checkout-form input[type="submit"] {
+  width: 80%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4285f4;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.checkout-form input[type="submit"]:hover {
+  background-color: #357ae8;
+}
+
+.error {
+  color: red;
+  margin-bottom: 15px;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+.error-input {
+  border: 1px solid red;
+  animation: shake 0.5s ease-in-out;
+}
+
+/* flex zip city country state  */
+
+.city-zip,
+.country-state {
+  display: flex;
+}
+
+/* div right container */
+.checkout-right,
+.checkout-left {
+  width: 40%;
+  margin: 10px 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.checkout-right {
+  align-items: center;
+}
+
+.checkout-left {
+  padding: 20px 100px;
+}
+
+/* Order Summary */
+/* Order Summary */
+
+.order-summary {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  width: 80%;
+  margin-bottom: 15px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.order-totals .order-item {
+  padding-top: 10px;
+}
+
+.order-item.total {
+  font-weight: bold;
+}
+
+/* Card Info */
+
+.card-information {
+  width: 80%;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+  margin-bottom: 15px;
+}
+
+.card-information label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.card-information input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.expiry-cvc {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.expiry-cvc input {
+  flex: 1;
+}
+
+.card-icons {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+/* Example icon dimensions */
+.card-icons img {
+  height: 24px;
+  width: auto;
+  margin-left: 10px;
+}
+
+#card-number {
+  background: url("path-to-card-icon.png") no-repeat right;
+  background-size: contain;
+}
+
+#expiry {
+  max-width: 100px;
+}
+
+#cvc {
+  max-width: 80px;
+  background: url("path-to-cvc-icon.png") no-repeat right; /* replace with actual path */
+  background-size: contain;
 }

@@ -1,141 +1,237 @@
-import { useState, useEffect } from 'react';
+import { useState } from "react";
 import "../styles/checkout.css";
-import csc from 'countries-states-cities';
+import usStates from "../data/States.jsx";
+
 function Checkout() {
   // State for form fields
-  const [fName, setFName] = useState("");
-  const [lName, setLName] = useState("");
+  const [custName, setcustName] = useState("");
+  const [email, setEmail] = useState("");
   const [streetAddress, setStreetAddress] = useState("");
   const [city, setCity] = useState("");
   const [zip, setZip] = useState("");
-  const [country, setCountry] = useState("");
-  const [states, setStates] = useState([]);
+  const [country] = useState("United States of America");
   const [selectedState, setSelectedState] = useState("");
   const [mobile, setMobile] = useState("");
 
-  // State for validation messages
-  const [validationMessage, setValidationMessage] = useState("");
+  // State for field validity
+  const [custNameValid, setcustNameValid] = useState(true);
+  const [emailValid, setEmailValid] = useState(true);
+  const [streetAddressValid, setStreetAddressValid] = useState(true);
+  const [cityValid, setCityValid] = useState(true);
+  const [zipValid, setZipValid] = useState(true);
+  const [selectedStateValid, setSelectedStateValid] = useState(true);
+  const [mobileValid, setMobileValid] = useState(true);
 
-  // Load countries
-  const countries = csc.getAllCountries();
-
-  // Update states when country changes
-  const handleCountryChange = (e) => {
-    const selectedCountry = e.target.value;
-    setCountry(selectedCountry);
-
-    try {
-      const fetchedStates = csc.getStatesOfCountry(selectedCountry);
-      setStates(fetchedStates || []);
-      setSelectedState('');
-    } catch (error) {
-      console.error("Error fetching states:", error);
-      setStates([]);
-    }
-  };
-
-  // Function to validate form fields
   function validateForm() {
-    if (!fName.trim()) return "First name is required.";
-    if (!lName.trim()) return "Last name is required.";
-    if (!streetAddress.trim()) return "Street address is required.";
-    if (!city.trim()) return "City is required.";
-    if (!zip.trim()) return "Zip code is required.";
-    if (!country) return "Country is required.";
-    if (!selectedState) return "State is required.";
-    if (!mobile.trim()) return "Mobile number is required.";
-    if (!/^\d+$/.test(mobile)) return "Mobile number must be numeric.";
-    return "";
+    let isValid = true;
+
+    if (!custName.trim()) {
+      setcustNameValid(false);
+      isValid = false;
+    } else {
+      setcustNameValid(true);
+    }
+
+    if (!email.trim() || !email.includes("@")) {
+      setEmailValid(false);
+      isValid = false;
+    } else {
+      setEmailValid(true);
+    }
+
+    if (!streetAddress.trim()) {
+      setStreetAddressValid(false);
+      isValid = false;
+    } else {
+      setStreetAddressValid(true);
+    }
+
+    if (!city.trim()) {
+      setCityValid(false);
+      isValid = false;
+    } else {
+      setCityValid(true);
+    }
+
+    if (!zip.trim() || !/^\d{5}(-\d{4})?$/.test(zip)) {
+      setZipValid(false);
+      isValid = false;
+    } else {
+      setZipValid(true);
+    }
+
+    if (!selectedState) {
+      setSelectedStateValid(false);
+      isValid = false;
+    } else {
+      setSelectedStateValid(true);
+    }
+
+    if (!mobile.trim() || !/^\d+$/.test(mobile)) {
+      setMobileValid(false);
+      isValid = false;
+    } else {
+      setMobileValid(true);
+    }
+
+    return isValid;
   }
 
-  // Function to handle form submission
   function order(submit) {
     submit.preventDefault();
-    const message = validateForm();
-    if (message) {
-      setValidationMessage(message);
-      return;
+    if (validateForm()) {
+      console.log(
+        custName,
+        email,
+        streetAddress,
+        city,
+        zip,
+        country,
+        selectedState,
+        mobile
+      );
     }
-    console.log(fName, lName, streetAddress, city, zip, country, selectedState, mobile);
   }
 
   return (
     <>
-      <form onSubmit={order}>
+    <form onSubmit={order} className="checkout-form">
+      <div className="checkout-left">
+        <label>Name</label>
         <input
           type="text"
-          name="fname"
-          placeholder="First Name"
-          value={fName}
-          onChange={(e) => setFName(e.target.value)}
+          name="custname"
+          className={custNameValid ? "" : "error-input"}
+          value={custName}
+          onChange={(e) => setcustName(e.target.value)}
         />
+
+        <label>Email</label>
         <input
-          type="text"
-          name="lname"
-          placeholder="Last Name"
-          value={lName}
-          onChange={(e) => setLName(e.target.value)}
+          type="email"
+          name="email"
+          className={emailValid ? "" : "error-input"}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
+
+        <label>Street Address</label>
         <input
           type="text"
           name="streetAddress"
-          placeholder="Street Address"
+          className={streetAddressValid ? "" : "error-input"}
           value={streetAddress}
           onChange={(e) => setStreetAddress(e.target.value)}
         />
-        <input
-          type="text"
-          name="city"
-          placeholder="City"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />
-        <input
-          type="text"
-          name="zip"
-          placeholder="Zip Code"
-          value={zip}
-          onChange={(e) => setZip(e.target.value)}
-        />
+        <div className="city-zip">
+          <input
+            placeholder="City"
+            type="text"
+            name="city"
+            className={cityValid ? "" : "error-input"}
+            id="mr"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
 
-        <select 
-          name="country" 
-          value={country} 
-          onChange={handleCountryChange}
-        >
-          <option value="">Select Country</option>
-          {countries.map((country, index) => (
-            <option key={index} value={country.isoCode}>
-              {country.name}
-            </option>
-          ))}
-        </select>
+          <input
+            placeholder="Zip Code"
+            type="text"
+            name="zip"
+            id="ml"
+            className={zipValid ? "" : "error-input"}
+            value={zip}
+            onChange={(e) => setZip(e.target.value)}
+          />
+        </div>
 
-        <select
-  name="state"
-  value={selectedState}
-  onChange={(e) => setSelectedState(e.target.value)}
-  disabled={!states.length}
->
-  <option value="">Select State</option>
-  {states.map((state, index) => (
-    <option key={index} value={state.isoCode}>
-      {state.name}
-    </option>
-  ))}
-</select>
+        <div className="country-state">
+          <input type="text" name="country" id="mr" value={country} readOnly />
 
+          <input
+            placeholder="State"
+            id="ml"
+            list="state-list"
+            name="state"
+            className={selectedStateValid ? "" : "error-input"}
+            value={selectedState}
+            onChange={(e) => setSelectedState(e.target.value)}
+          />
+          <datalist id="state-list">
+            {usStates.map((state, index) => (
+              <option key={index} value={state} />
+            ))}
+          </datalist>
+        </div>
+
+        <label>Mobile Number</label>
         <input
-          type="number"
+          type="tel"
           name="mobile"
-          placeholder="Mobile"
+          className={mobileValid ? "" : "error-input"}
           value={mobile}
           onChange={(e) => setMobile(e.target.value)}
         />
+      </div>
 
-        <input type="submit" value="Order Now" />
-        {validationMessage && <div className="error">{validationMessage}</div>}
-      </form>
+      <div className="checkout-right">
+        {/* Order Summary */}
+        {/* Order Summary */}
+        {/* Order Summary */}
+
+        <div className="order-summary">
+          <div className="order-item">
+            <span>Product</span>
+            <span>Subtotal</span>
+          </div>
+          <div className="order-item">
+            <span>Cotton Chinos × 1</span>
+            <span>₹1,299.00</span>
+          </div>
+
+          <div className="order-totals">
+            <div className="order-item">
+              <span>Subtotal</span>
+              <span>₹1,299.00</span>
+            </div>
+            <div className="order-item">
+              <span>Shipping</span>
+              <span>Free shipping</span>
+            </div>
+            <div className="order-item total">
+              <span>Total</span>
+              <span>₹1,299.00</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Payment Options */}
+
+        <div className="card-information">
+          <label htmlFor="card-number">Card Number</label>
+          <input
+            type="text"
+            id="card-number"
+            placeholder="1234 1234 1234 1234"
+          />
+          <div className="card-icons"></div>
+
+          <div className="expiry-cvc">
+            <input type="text" id="expiry" placeholder="MM / YY" />
+            <input type="text" id="cvc" placeholder="CVC" />
+          </div>
+
+          <label htmlFor="cardholder-name">Cardholder Name</label>
+          <input
+            type="text"
+            id="cardholder-name"
+            placeholder="Full name on card"
+          />
+        </div>
+
+        <input type="submit" value="Place Order" />
+      </div>
+    </form>
     </>
   );
 }
