@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import "../styles/checkout.css";
-import csc from 'countries-states-cities';
 function Checkout() {
   // State for form fields
   const [fName, setFName] = useState("");
