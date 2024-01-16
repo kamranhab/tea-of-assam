@@ -1,6 +1,11 @@
 import { useState } from "react";
 import "../styles/checkout.css";
 import usStates from "../data/States.jsx";
+import visa from "../assets/visa.png";
+import mastercard from "../assets/master.png";
+import amex from "../assets/amex.png";
+import disc from "../assets/disc.png";
+import prdct from "../assets/greentea.png";
 
 function Checkout() {
   // State for form fields
@@ -92,147 +97,188 @@ function Checkout() {
       );
     }
   }
+  const [expiry, setExpiry] = useState("");
+
+  const handleExpiryChange = (e) => {
+    let value = e.target.value;
+    const expiryRegex = /^(\d{2})(\d{2})$/;
+
+    value = value.replace(/\D/g, "").replace(expiryRegex, (match, p1, p2) => {
+      return `${p1}/${p2}`;
+    });
+
+    if (value.length > 5) {
+      value = value.substring(0, 5);
+    }
+
+    setExpiry(value);
+  };
 
   return (
-    <>
-    <form onSubmit={order} className="checkout-form">
-      <div className="checkout-left">
-        <label>Name</label>
-        <input
-          type="text"
-          name="custname"
-          className={custNameValid ? "" : "error-input"}
-          value={custName}
-          onChange={(e) => setcustName(e.target.value)}
-        />
-
-        <label>Email</label>
-        <input
-          type="email"
-          name="email"
-          className={emailValid ? "" : "error-input"}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <label>Street Address</label>
-        <input
-          type="text"
-          name="streetAddress"
-          className={streetAddressValid ? "" : "error-input"}
-          value={streetAddress}
-          onChange={(e) => setStreetAddress(e.target.value)}
-        />
-        <div className="city-zip">
+    <div className="checkout-main-container">
+      <form onSubmit={order} className="checkout-form">
+        <div className="checkout-left">
+          <label>Name</label>
           <input
-            placeholder="City"
             type="text"
-            name="city"
-            className={cityValid ? "" : "error-input"}
-            id="mr"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
+            name="custname"
+            className={custNameValid ? "" : "error-input"}
+            value={custName}
+            onChange={(e) => setcustName(e.target.value)}
           />
 
+          <label>Email</label>
           <input
-            placeholder="Zip Code"
+            type="email"
+            name="email"
+            className={emailValid ? "" : "error-input"}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <label>Street Address</label>
+          <input
             type="text"
-            name="zip"
-            id="ml"
-            className={zipValid ? "" : "error-input"}
-            value={zip}
-            onChange={(e) => setZip(e.target.value)}
+            name="streetAddress"
+            className={streetAddressValid ? "" : "error-input"}
+            value={streetAddress}
+            onChange={(e) => setStreetAddress(e.target.value)}
+          />
+          <div className="city-zip">
+            <input
+              placeholder="City"
+              type="text"
+              name="city"
+              className={cityValid ? "" : "error-input"}
+              id="mr"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+            />
+
+            <input
+              placeholder="Zip Code"
+              type="text"
+              name="zip"
+              id="ml"
+              className={zipValid ? "" : "error-input"}
+              value={zip}
+              onChange={(e) => setZip(e.target.value)}
+            />
+          </div>
+
+          <div className="country-state">
+            <input
+              type="text"
+              name="country"
+              id="mr2"
+              value={country}
+              readOnly
+            />
+
+            <input
+              placeholder="State"
+              id="ml2"
+              list="state-list"
+              name="state"
+              className={selectedStateValid ? "" : "error-input"}
+              value={selectedState}
+              onChange={(e) => setSelectedState(e.target.value)}
+            />
+            <datalist id="state-list">
+              {usStates.map((state, index) => (
+                <option key={index} value={state} />
+              ))}
+            </datalist>
+          </div>
+
+          <label>Mobile Number</label>
+          <input
+            type="tel"
+            name="mobile"
+            className={mobileValid ? "" : "error-input"}
+            value={mobile}
+            onChange={(e) => setMobile(e.target.value)}
           />
         </div>
 
-        <div className="country-state">
-          <input type="text" name="country" id="mr" value={country} readOnly />
+        <div className="checkout-right">
+          {/* Order Summary */}
+          {/* Order Summary */}
+          {/* Order Summary */}
 
-          <input
-            placeholder="State"
-            id="ml"
-            list="state-list"
-            name="state"
-            className={selectedStateValid ? "" : "error-input"}
-            value={selectedState}
-            onChange={(e) => setSelectedState(e.target.value)}
-          />
-          <datalist id="state-list">
-            {usStates.map((state, index) => (
-              <option key={index} value={state} />
-            ))}
-          </datalist>
-        </div>
-
-        <label>Mobile Number</label>
-        <input
-          type="tel"
-          name="mobile"
-          className={mobileValid ? "" : "error-input"}
-          value={mobile}
-          onChange={(e) => setMobile(e.target.value)}
-        />
-      </div>
-
-      <div className="checkout-right">
-        {/* Order Summary */}
-        {/* Order Summary */}
-        {/* Order Summary */}
-
-        <div className="order-summary">
-          <div className="order-item">
-            <span>Product</span>
-            <span>Subtotal</span>
-          </div>
-          <div className="order-item">
-            <span>Cotton Chinos × 1</span>
-            <span>₹1,299.00</span>
-          </div>
-
-          <div className="order-totals">
+          <div className="order-summary">
             <div className="order-item">
-              <span>Subtotal</span>
-              <span>₹1,299.00</span>
+              <span>Product</span>
+              <span>Item Price</span>
             </div>
             <div className="order-item">
-              <span>Shipping</span>
-              <span>Free shipping</span>
+              <img className="checkout-product-image" src={prdct} />
+              <span>$30.00</span>
             </div>
-            <div className="order-item total">
-              <span>Total</span>
-              <span>₹1,299.00</span>
+
+            <div className="order-totals">
+              <div className="order-item">
+                <span>Subtotal</span>
+                <span>$30.00</span>
+              </div>
+              <div className="order-item">
+                <span>Shipping</span>
+                <span>Free shipping</span>
+              </div>
+              <div className="order-item total">
+                <span>Total</span>
+                <span type="number">$30.00</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Payment Options */}
+          {/* Payment Options */}
 
-        <div className="card-information">
-          <label htmlFor="card-number">Card Number</label>
-          <input
-            type="text"
-            id="card-number"
-            placeholder="1234 1234 1234 1234"
-          />
-          <div className="card-icons"></div>
+          <div className="card-information">
+            <label htmlFor="card-number">Card Number</label>
+            <input
+              type="text"
+              id="card-number"
+              placeholder="1234 1234 1234 1234"
+            />
+            <div className="card-icons">
+              <img src={visa} alt="Visa" />
+              <img src={mastercard} alt="MasterCard" />
+              <img src={amex} alt="American Express" />
+              <img src={disc} alt="Discover" />
+            </div>
 
-          <div className="expiry-cvc">
-            <input type="text" id="expiry" placeholder="MM / YY" />
-            <input type="text" id="cvc" placeholder="CVC" />
+            <div className="expiry-cvc">
+              <input
+                type="text"
+                id="expiry"
+                placeholder="MM / YY"
+                value={expiry}
+                onChange={handleExpiryChange}
+                maxLength="5"
+              />
+              <input
+                type="password"
+                id="cvc"
+                placeholder="CVV/CVC"
+                pattern="\d*"
+                inputMode="numeric"
+                maxLength="4"
+              />
+            </div>
+
+            <label htmlFor="cardholder-name">Cardholder Name</label>
+            <input
+              type="text"
+              id="cardholder-name"
+              placeholder="Full name on card"
+            />
           </div>
 
-          <label htmlFor="cardholder-name">Cardholder Name</label>
-          <input
-            type="text"
-            id="cardholder-name"
-            placeholder="Full name on card"
-          />
+          <input type="submit" value="Place Order" />
         </div>
-
-        <input type="submit" value="Place Order" />
-      </div>
-    </form>
-    </>
+      </form>
+    </div>
   );
 }
 

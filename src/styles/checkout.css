@@ -1,4 +1,14 @@
+.checkout-main-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
 .checkout-form {
+  height: 90vh;
+  width: 70vw;
   display: flex;
   justify-content: center;
 }
@@ -25,7 +35,13 @@ input {
 #ml {
   margin-left: 5px;
 }
+#mr2 {
+  margin-right: 5px;
+}
 
+#ml2 {
+  margin-left: 5px;
+}
 
 .checkout-form input[type="submit"] {
   width: 80%;
@@ -127,6 +143,10 @@ input {
 .order-item.total {
   font-weight: bold;
 }
+.checkout-product-image{
+  height: 60px;
+  width: auto;
+}
 
 /* Card Info */
 
@@ -171,12 +191,18 @@ input {
   margin-bottom: 20px;
 }
 
-/* Example icon dimensions */
+
 .card-icons img {
+  box-shadow: -6px 0px 5px 0px rgba(0,0,0,0.25);
   height: 24px;
   width: auto;
-  margin-left: 10px;
+  margin-left: -10px;
+  position: relative;
 }
+.card-icons img:nth-child(1) { z-index: 1; }
+.card-icons img:nth-child(2) { z-index: 2; }
+.card-icons img:nth-child(3) { z-index: 3; }
+.card-icons img:nth-child(4) { z-index: 4; }
 
 #card-number {
   background: url("path-to-card-icon.png") no-repeat right;
@@ -188,7 +214,76 @@ input {
 }
 
 #cvc {
-  max-width: 80px;
-  background: url("path-to-cvc-icon.png") no-repeat right; /* replace with actual path */
-  background-size: contain;
+  max-width: 100px;
+  background: url("../assets/cvv.png") no-repeat right; 
+  background-size:25px;
+}
+
+@media (max-width: 1350px) {
+  .checkout-main-container {
+    width: 100vw;
+  }
+  .checkout-form {
+    width: 90%;
+   
+  }
+  .checkout-left,
+  .checkout-right {
+    width: 50%; 
+  }
+ 
+}
+
+
+@media (max-width: 850px) {
+  .checkout-main-container {
+    
+    height: auto;
+  }
+  .checkout-form {
+    flex-direction: column; 
+    width: 80vw; 
+    height: auto;
+
+  }
+  .checkout-left,
+  .checkout-right {
+    width: 100%; 
+    margin: 10px 0; 
+  }
+  .checkout-left{
+    padding: 10px 50px;
+  }
+  .city-zip,
+  .country-state,
+  
+  .city-zip input,
+  .country-state input,
+  .expiry-cvc input {
+    width: 100%; 
+  }
+  
+}
+
+@media (max-width: 600px) {
+  .checkout-main-container {
+    padding: 10px; 
+    
+    height: auto;
+  }
+  .checkout-form {
+    width: 90vw;
+    height: auto;
+  }
+  .checkout-left,
+  .checkout-right {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  .order-summary,
+  .card-information {
+    width: 100%; 
+  }
+
 }
