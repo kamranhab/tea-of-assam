@@ -13,7 +13,7 @@ function Home() {
 
   const addToCart = (product) => {
     const existingProduct = cartItems.find(elem => elem.id === product.id);
-    console.log(product.id);
+
     if (existingProduct) {
       setCartItems(cartItems.map(elem => 
         elem.id === product.id ? { ...elem, quantity: elem.quantity + 1 } : elem
@@ -25,7 +25,7 @@ function Home() {
 
   const giftAddToCart = (product) => {
     const existingGiftProduct = cartItems.find(elem => elem.id === product.id);
-    console.log(product.id);
+    
     if (existingGiftProduct) {
       setCartItems(cartItems.map(elem => 
         elem.id === product.id ? { ...elem, quantity: elem.quantity + 1 } : elem

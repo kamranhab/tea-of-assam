@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from 'react-router-dom';
 import "../styles/checkout.css";
 import usStates from "../data/States.jsx";
 import visa from "../assets/visa.png";
@@ -8,6 +9,18 @@ import disc from "../assets/disc.png";
 import prdct from "../assets/greentea.png";
 
 function Checkout() {
+
+  const location = useLocation();
+  const { cartItems } = location.state || { cartItems: [] };
+  //CHECKING ARRAY
+  //CHECKING ARRAY
+  //CHECKING ARRAY
+  console.log("Cart items in Checkout:",cartItems)  
+  //CHECKING ARRAY
+  //CHECKING ARRAY
+  //CHECKING ARRAY
+
+
   // State for form fields
   const [custName, setcustName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,6 +39,13 @@ function Checkout() {
   const [zipValid, setZipValid] = useState(true);
   const [selectedStateValid, setSelectedStateValid] = useState(true);
   const [mobileValid, setMobileValid] = useState(true);
+
+  // Calculate total price
+  const totalPrice = cartItems.reduce((total, item) => {
+    const itemPrice = item.price ? parseFloat(item.price.substring(1)) : 0;
+    return total + item.quantity * itemPrice;
+}, 0);
+
 
   function validateForm() {
     let isValid = true;
@@ -202,21 +222,17 @@ function Checkout() {
         </div>
 
         <div className="checkout-right">
-          {/* Order Summary */}
-          {/* Order Summary */}
-          {/* Order Summary */}
+                    <div className="order-summary">
+                        {/* Map over cartItems to display them */}
+                        {cartItems.map((item, index) => (
+                            <div key={index} className="order-item">
+                                <img className="checkout-product-image" src={item.image} alt={item.name} />
+                                <span>{item.name} x {item.quantity}</span>
+                                <span>${(parseFloat(item.price.substring(1)) * item.quantity).toFixed(2)}</span>
+                            </div>
+                        ))}
 
-          <div className="order-summary">
-            <div className="order-item">
-              <span>Product</span>
-              <span>Item Price</span>
-            </div>
-            <div className="order-item">
-              <img className="checkout-product-image" src={prdct} />
-              <span>$30.00</span>
-            </div>
-
-            <div className="order-totals">
+                        <div className="order-totals">
               <div className="order-item">
                 <span>Subtotal</span>
                 <span>$30.00</span>
@@ -227,7 +243,7 @@ function Checkout() {
               </div>
               <div className="order-item total">
                 <span>Total</span>
-                <span type="number">$30.00</span>
+                <span>${totalPrice.toFixed(2)}</span>
               </div>
             </div>
           </div>
