@@ -9,7 +9,8 @@ import disc from "../assets/disc.png";
 import prdct from "../assets/greentea.png";
 
 function Checkout() {
-
+  //UPDATE
+  //UPDATE
   const location = useLocation();
   const { cartItems } = location.state || { cartItems: [] };
   //CHECKING ARRAY
