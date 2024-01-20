@@ -10,7 +10,8 @@ import Footer from "../components/Footer.jsx"
 import BottomBar from "../components/BottomBar.jsx";
 
 function Checkout() {
-
+  //UPDATE
+  //UPDATE
   const location = useLocation();
   const { cartItems } = location.state || { cartItems: [] };
   //CHECKING ARRAY
