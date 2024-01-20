@@ -1,6 +1,6 @@
 .bsearch,
 .baccount,.bham,.bhome{
-  width: 3rem;
+  width: 20px;
 }
 .bbar{
     display: flex;
@@ -11,12 +11,10 @@
 .bicons-container{
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content:center;
+    gap:18vw;
     align-items: center;
 
-}
-.bhamburg{
-    
 }
 .dropup-menu{
         position: absolute;
@@ -37,16 +35,15 @@
 
 .bottom-container {
   display: none;
-  height: 10vh;
+  height:6vh;
   position: fixed;
-  bottom: 0; /* Position it at the bottom of the viewport */
+  bottom: 0;
   width: 100%;
   background-color: #927b5b; 
 }
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width:768px){
     .bottom-container{
         display: flex;
     }
-    .bhamburg{}
 }

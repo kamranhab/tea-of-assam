@@ -26,7 +26,7 @@ const Products=[
         id: 3,
         brandName:'TATA',
         image:greenTea,
-        name:'Faisal',
+        name:'Blue Tea',
         price:'$30.00',
         category: 'Tea',
         size:'10oz'
@@ -36,7 +36,7 @@ const Products=[
         id: 4,
         brandName:'TATA',
         image:greenTea,
-        name:'Green Tea',
+        name:'Red Tea',
         price:'$20.00',
         category: 'Tea',
         size:'10oz'
@@ -46,7 +46,7 @@ const Products=[
         id: 5,
         brandName:'TATA',
         image:greenTea,
-        name:'Green Tea',
+        name:'Orange Tea',
         price:'$20.00',
         category: 'Tea',
         size:'10oz'
@@ -56,7 +56,7 @@ const Products=[
         id: 6,
         brandName:'TATA',
         image:greenTea,
-        name:'Green Tea',
+        name:'White Tea',
         price:'$20.00',
         category:'Tea',
         size:'10oz'

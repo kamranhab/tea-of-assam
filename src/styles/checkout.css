@@ -252,7 +252,7 @@ input {
     margin: 10px 0; 
   }
   .checkout-left{
-    padding: 10px 50px;
+    padding: 1vh 8vw;
   }
   .city-zip,
   .country-state,

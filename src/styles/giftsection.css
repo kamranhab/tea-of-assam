@@ -1,9 +1,8 @@
 .gift-main-container{
-    background-color: #000;
+    background-color: #998975b3;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 10vh;
 }
 .gift-container{
     width:80%;
@@ -191,6 +190,9 @@
     .gift-image{
       width:36vw;
     
+    }
+    .add-to-cart{
+      font-size: 0.388rem;
     }
     .gift-info{
       padding: 15px 5px;
