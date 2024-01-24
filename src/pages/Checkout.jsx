@@ -6,7 +6,8 @@ import visa from "../assets/visa.png";
 import mastercard from "../assets/master.png";
 import amex from "../assets/amex.png";
 import disc from "../assets/disc.png";
-import prdct from "../assets/greentea.png";
+import Footer from "../components/Footer.jsx"
+import BottomBar from "../components/BottomBar.jsx";
 
 function Checkout() {
   //UPDATE
@@ -136,6 +137,7 @@ function Checkout() {
   };
 
   return (
+    <>
     <div className="checkout-main-container">
       <form onSubmit={order} className="checkout-form">
         <div className="checkout-left">
@@ -296,6 +298,9 @@ function Checkout() {
         </div>
       </form>
     </div>
+    <Footer/>
+    <BottomBar/>
+    </>
   );
 }
 

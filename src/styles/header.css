@@ -80,27 +80,6 @@
   bottom: 20px;
 }
 @media only screen and (max-width: 768px) {
-  .header-container {
-  width: 100%;
-  }
-  .header{
-  width:90%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  }
-  .header-logo{
-    width: 5rem;
-  }
-  .navigation{
-    width: 1rem ;
-  }
-  .head-icons-container{
-    width: 5rem;
-  }
-}
-
-@media only screen and (max-width: 500px) {
   .navigation{
     display: none;
   }
@@ -113,9 +92,14 @@
   .search-icon{
     display: none;
   }
+  .cart-icon{
+    width:1.5rem;
+  }
   .header{
     display: flex;
     justify-content: space-between;
   }
-  
+  .header-logo{
+    width:7rem;
+  }
 }

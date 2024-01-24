@@ -34,3 +34,12 @@
   cursor:pointer}
 
 
+  @media only screen and (max-width: 600px) {
+
+    .featured-text{
+      font-size: 0.7rem;
+    }
+    .f-show-more{
+      font-size: 0.7rem;
+    }
+  }

@@ -6,6 +6,7 @@ import HeroSection from '../components/HeroSection.jsx'
 import bg from '../assets/bg2.mp4'
 import CartPop from '../components/CartPop.jsx';
 import BottomBar from '../components/BottomBar.jsx'; 
+import Footer from '../components/Footer.jsx';
 
 function Home() {
   const [cartItems, setCartItems] = useState([]);
@@ -59,6 +60,7 @@ function Home() {
         </div>
         <FeaturedSection addToCart={addToCart} />
         <GiftSection giftAddToCart={giftAddToCart} />
+        <Footer/>
         <BottomBar/>
       
     </>

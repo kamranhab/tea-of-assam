@@ -5,8 +5,8 @@ function FeaturedSection({ addToCart }) {
   return (
     <div className='featured-container'>
       <div className="featured-heading">
-        <h2 className='featured-text'>Featured Products</h2>
-        <h2 className="f-show-more">View All</h2>
+        <p className='featured-text'>Featured Products</p>
+        <p className="f-show-more">View All</p>
       </div>
       <FeaturedProduct addToCart={addToCart} />
     </div>

@@ -4,6 +4,7 @@ import bhomeIcon from '../assets/bhome.png'
 import bsearchIcon from '../assets/search.svg';
 import baccountIcon from '../assets/baccount.png';
 import bhamburgIcon from '../assets/bham.png'
+import { Link } from 'react-router-dom';
 
 function BottomBar() {
 
@@ -17,7 +18,7 @@ function BottomBar() {
     <div className='bottom-container'>
       <div className='bbar'>
         <div className='bicons-container'>
-          <img src={bhomeIcon} alt="" className="bhome" /> 
+          <Link to='/'><img src={bhomeIcon} alt="" className="bhome" /></Link> 
           <img src={baccountIcon} alt="" className="baccount" />
           <img src={bsearchIcon} alt="" className="bsearch" />
           
