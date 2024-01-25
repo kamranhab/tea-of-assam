@@ -7,6 +7,7 @@ import Contact from './pages/Contact.jsx'
 import Policies from './pages/Policies.jsx'
 import Wholesale from './pages/Wholesale.jsx'
 import { Route, Routes } from 'react-router-dom';
+import Faq from './pages/Faq.jsx'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/policies' element={<Policies/>}/>
         <Route path='/wholesale' element={<Wholesale/>}/>
+        <Route path='/faqs' element={<Faq/>}/>
 
 
       </Routes>
