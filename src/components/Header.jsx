@@ -20,6 +20,7 @@ function Header({ cartCount, setCartVisible }) {
                         <li><Link to='/about'>About Us</Link></li>
                         <li><Link to='/contact'>Contact</Link></li>
                         <li><Link to='/policies'>Terms and Policies</Link></li>
+                        <li><Link to='/faqs'>FAQs</Link></li>
                     </ul>
                 </li>
           </ul>

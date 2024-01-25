@@ -1,0 +1,40 @@
+.policies-page {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    min-height: 100%;
+    background-image: url(../assets/bg-pages.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .policies-main-content {
+    width:80%;
+    margin-top:10vh;
+    flex: 1;
+    padding: 20px;
+    
+  }
+  .policies-title{
+    text-decoration: none;
+    font-weight: 600;
+    color:#4b830d;
+  }
+  
+  .policies-main-content h1 {
+    margin-bottom: 1em;
+    color: #ffffff; 
+  }
+  
+  .policies-main-content h2 {
+    font-size:1.2rem;
+    color: #ffffff; 
+    margin-top: 1em;
+  }
+  
+  .policies-main-content p {
+    color: #bbb9b9;
+    line-height: 1.6;
+    margin-bottom: 1em;
+  }
+  
