@@ -2,7 +2,7 @@ import React from 'react';
 import PagesHeader from "../components/PagesHeader.jsx";
 import Footer from "../components/Footer.jsx";
 import BottomBar from "../components/BottomBar.jsx";
-import '../styles/Wholesale.css'; // Ensure this CSS file exists and is styled according to your brand
+import '../styles/wholesale.css'; 
 
 function Wholesale() {
   return (
