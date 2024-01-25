@@ -45,18 +45,47 @@
 }
 
 .dropdown-content {
-  list-style-type: none;
   display: none;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  list-style: none;
   position: absolute;
+  background-color: #f9f9f9; /* Light background for dropdown items */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Shadow for dropdown */
   z-index: 1;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+  text-decoration: none;
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
 }
 
 .pages:hover .dropdown-content {
   display: block;
+  text-align: center;
+  animation: slideIn 0.5s ease-out; 
 }
+
+/* Keyframes for the slide-in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px); /* Start from above */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .head-icons {
   margin: 0 0.7rem;
@@ -96,6 +125,7 @@
     width:1.5rem;
   }
   .header{
+    height: 50px;
     display: flex;
     justify-content: space-between;
   }

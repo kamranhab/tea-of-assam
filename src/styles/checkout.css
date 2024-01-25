@@ -59,9 +59,10 @@ input {
   background-color: #357ae8;
 }
 
-.error {
-  color: red;
-  margin-bottom: 15px;
+
+.error-input {
+  border: 1px solid red;
+  animation: shake 0.5s ease-in-out;
 }
 
 @keyframes shake {
@@ -78,11 +79,6 @@ input {
   75% {
     transform: translateX(-5px);
   }
-}
-
-.error-input {
-  border: 1px solid red;
-  animation: shake 0.5s ease-in-out;
 }
 
 /* flex zip city country state  */
