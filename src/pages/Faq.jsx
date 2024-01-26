@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PagesHeader from "../components/PagesHeader.jsx";
 import Footer from "../components/Footer.jsx";
 import BottomBar from "../components/BottomBar.jsx";
-import '../styles/Faq.css'; // Ensure you create this CSS file for styling
+import '../styles/faq.css'; 
 
 function Faq() {
   // Example of how to manage an accordion-style FAQ where only one answer can be open at a time

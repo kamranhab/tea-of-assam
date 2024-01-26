@@ -1,20 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import FeaturedSection from '../components/FeaturedSection.jsx';
 import GiftSection from '../components/GiftSection.jsx';
-import Header from '../components/Header.jsx'
-import HeroSection from '../components/HeroSection.jsx'
-import bg from '../assets/bg2.mp4'
+import Header from '../components/Header.jsx';
+import HeroSection from '../components/HeroSection.jsx';
+import bg from '../assets/bg2.mp4';
 import CartPop from '../components/CartPop.jsx';
 import BottomBar from '../components/BottomBar.jsx'; 
 import Footer from '../components/Footer.jsx';
 
 function Home() {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCartItems = localStorage.getItem('cartItems');
+    return savedCartItems ? JSON.parse(savedCartItems) : [];
+  });
   const [cartVisible, setCartVisible] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addToCart = (product) => {
     const existingProduct = cartItems.find(elem => elem.id === product.id);
-
     if (existingProduct) {
       setCartItems(cartItems.map(elem => 
         elem.id === product.id ? { ...elem, quantity: elem.quantity + 1 } : elem
@@ -26,7 +32,6 @@ function Home() {
 
   const giftAddToCart = (product) => {
     const existingGiftProduct = cartItems.find(elem => elem.id === product.id);
-    
     if (existingGiftProduct) {
       setCartItems(cartItems.map(elem => 
         elem.id === product.id ? { ...elem, quantity: elem.quantity + 1 } : elem
@@ -48,7 +53,6 @@ function Home() {
 
   return (
     <>
-
       {cartVisible && <CartPop cartItems={cartItems} setCartVisible={setCartVisible} onUpdateQuantity={onUpdateQuantity} onDelete={onDelete} />}
       <div className="main-container">
         <video id="video-background" autoPlay muted loop preload="auto">
@@ -60,8 +64,8 @@ function Home() {
         </div>
         <FeaturedSection addToCart={addToCart} />
         <GiftSection giftAddToCart={giftAddToCart} />
-        <Footer/>
-        <BottomBar/>
+        <Footer />
+        <BottomBar />
       
     </>
   );
