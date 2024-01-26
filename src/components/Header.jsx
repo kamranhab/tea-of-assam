@@ -29,7 +29,7 @@ function Header({ cartCount, setCartVisible }) {
             <img src={accountIcon} alt="" className="account-icon head-icons" />
             <span className="cart-icon-container" onClick={() => setCartVisible(preview => !preview)}>
               <img src={cartIcon} alt="" className="cart-icon head-icons" />
-              <span className="cart-counter">{cartCount}</span>
+              {cartCount > 0 && <span className="cart-counter">{cartCount}</span>}
             </span>
           </div>
         </header>
