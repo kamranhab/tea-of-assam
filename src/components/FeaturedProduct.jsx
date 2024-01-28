@@ -24,8 +24,9 @@ function FeaturedProduct({ addToCart }) {
 
   const indexOfLastItem = (currentPage + 1) * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
-
+  const filteredProducts = items.filter(product => product.featured == true);
+  const currentItems = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
+  
   return (
     <div className="featured-products-600px">
       <div className="featured-products"> 
