@@ -3,6 +3,7 @@
     z-index:9999;
     background-color: rgba(255, 255, 255, 0.822);
     height: 100%;
+    width: 370px;
     right: 0;
     transition: right 1s ease-in-out;
     display:flex;
@@ -11,18 +12,30 @@
 
 }
 .popup-top{
-    height:75%;
+    height:76%;
     width: 100%;
     overflow:scroll;
+    overflow-x: hidden;
     
 }
 .popup-top::-webkit-scrollbar {
-    width: 0;
+    width:0.8em; /* width of the entire scrollbar */
 }
+
+.popup-top::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0); /* color of the tracking area */
+}
+
+.popup-top::-webkit-scrollbar-thumb {
+    background-color: rgb(141, 141, 141); /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 2px solid #d4d4d4;
+}
+
 
 .popup-head{
     width: 100%;
-    height:5%;
+    height:4%;
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -32,21 +45,23 @@
     color: #fff;
     font-size:1rem;
 }
-.close-cart{
+.popup-head>button{
     border-style: none;
     font-family: inherit;
     text-decoration: none;
-    font-size:1.1rem;
-    padding: 10px;
     color:#fff;
-    background-color: #ff2802;
+    padding: 0 15px;
     height: 100%;
+    background-color: #ff2802;
     cursor: pointer;
 }
 .popup-product-card{
-    height:fit-content;
-    width: 350px;
-    padding: 10px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:220px;
+    width:350px;
+    padding: 20px 0;
     margin: 10px;
     background-color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.101);
@@ -101,7 +116,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 15px 22px;
+    padding: 10px 32px 0 32px;
 }
 .price-delete>img{
     width: 20px;

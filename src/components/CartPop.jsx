@@ -27,7 +27,7 @@ function CartPop({
         <div className="popup-head">
           <p>My Cart</p>
           <p>{itemCount} Items</p>
-          <button className="close-cart" onClick={() => setCartVisible(false)}>
+          <button onClick={() => setCartVisible(false)}>
             Close
           </button>
         </div>
