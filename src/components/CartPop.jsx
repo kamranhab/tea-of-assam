@@ -31,7 +31,6 @@ function CartPop({
             Close
           </button>
         </div>
-        <div className="card-subtotal">
           <div className="popup-top">
             {cartItems.map((item, index) => (
               <CartProduct
@@ -62,7 +61,6 @@ function CartPop({
               <button className="buy">Proceed to Buy</button>
             </Link>
           </div>
-        </div>
       </div>
     </>
   );
