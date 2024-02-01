@@ -1,5 +1,4 @@
 import "../styles/singleproduct.css";
-import spImg from "../assets/greentea.webp";
 import Footer from "../components/Footer.jsx";
 import BottomBar from "../components/BottomBar.jsx";
 import Header from "../components/Header.jsx";
@@ -59,12 +58,12 @@ function SingleProduct() {
       <div className="single-product-container">
         <div className="sp-container">
           <div className="sp-img-container">
-            <img src={spImg} className="sp-img" />
+            <img src={items.image} className="sp-img" />
           </div>
           <div className="sp-details">
             <h3 className="sp-name">{items.name}</h3>
-            <p className="sp-size">10oz</p>
-            <p className="sp-price">$20.00</p>
+            <p className="sp-size">{items.size}</p>
+            <p className="sp-price">{items.price}</p>
             <div className="sp-desc">{items.desc}</div>
             {/* <div className="sp-counter">
               <button>-</button>
