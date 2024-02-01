@@ -9,19 +9,12 @@ import Footer from "../components/Footer.jsx";
 import BottomBar from "../components/BottomBar.jsx";
 
 function Checkout() {
-  //UPDATE
-  //UPDATE
+
   const [cartItems, setCartItems] = useState(() => {
     const savedCartItems = localStorage.getItem("cartItems");
     return savedCartItems ? JSON.parse(savedCartItems) : [];
   });
-  //CHECKING ARRAY
-  //CHECKING ARRAY
-  //CHECKING ARRAY
-  console.log("Cart items in Checkout:", cartItems);
-  //CHECKING ARRAY
-  //CHECKING ARRAY
-  //CHECKING ARRAY
+
 
   // State for form fields
   const [custName, setcustName] = useState("");

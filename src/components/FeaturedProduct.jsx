@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "../styles/featuredproduct.css";
 import Products from "../data/Products.jsx";
+import { Link } from "react-router-dom";
 import rightbutton from "../assets/right.png"
 
 function FeaturedProduct({ addToCart }) {
@@ -32,9 +33,9 @@ function FeaturedProduct({ addToCart }) {
       <div className="featured-products"> 
       {currentItems.map((item) => (
         <div key={item.id} className="product">
-          <img className='product-image'src={item.image} alt={item.name} />
+          <Link to={`/products/${item.slug}`} state={{ items: item }}><img className='product-image'src={item.image} alt={item.name} /></Link>
           <div className="product-details">
-            <h3 className="product-name">{item.name}</h3>
+            <h3 className="product-name"><Link to={`/products/${item.slug}`} state={{ items: item }}>{item.name}</Link></h3>
             <p className="product-size">{item.size}</p>
             <p className="product-price">{item.price}</p>
             <button className="padd-to-cart" onClick={() => addToCart(item)}>Add to Cart</button>

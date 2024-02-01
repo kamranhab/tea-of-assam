@@ -12,6 +12,7 @@ function Footer(){
         <li><Link to="/policies">Our Policies</Link></li>
         <li><Link to="/wholesale">Wholesale</Link></li>
         <li><Link to="/faqs">FAQs</Link></li>
+        <li><Link to="/singleproduct">SP</Link></li>
             </ul>
         </div>
     )

@@ -5,6 +5,7 @@ import Header from "../components/Header.jsx";
 import BottomBar from "../components/BottomBar.jsx";
 import Footer from "../components/Footer.jsx";
 import CartPop from "../components/CartPop.jsx";
+import { Link } from "react-router-dom";
 
 function AllProducts() {
   const [cartItems, setCartItems] = useState(() => {
@@ -35,13 +36,19 @@ function AllProducts() {
   };
 
   const onDelete = (index) => {
-    setCartItems(currentItems => currentItems.filter((_, idx) => idx !== index));
+    setCartItems((currentItems) =>
+      currentItems.filter((_, idx) => idx !== index)
+    );
   };
 
   const onUpdateQuantity = (index, delta) => {
-    setCartItems(currentItems => currentItems.map((item, idx) => 
-      idx === index ? { ...item, quantity: Math.max(item.quantity + delta, 0) } : item
-    ));
+    setCartItems((currentItems) =>
+      currentItems.map((item, idx) =>
+        idx === index
+          ? { ...item, quantity: Math.max(item.quantity + delta, 0) }
+          : item
+      )
+    );
   };
 
   return (
@@ -59,13 +66,19 @@ function AllProducts() {
         <div className="all-products">
           {items.map((item) => (
             <div key={item.id} className="product">
-              <img
-                className="all-product-image"
-                src={item.image}
-                alt={item.name}
-              />
+              <Link to={`/products/${item.slug}`} state={{ items: item }}>
+                <img
+                  className="all-product-image"
+                  src={item.image}
+                  alt={item.name}
+                />
+              </Link>
               <div className="all-product-details">
-                <h3 className="all-product-name">{item.name}</h3>
+                <h3 className="all-product-name">
+                  <Link to={`/products/${item.slug}`} state={{ items: item }}>
+                    {item.name}
+                  </Link>
+                </h3>
                 <p className="all-product-size">{item.size}</p>
                 <p className="all-product-price">{item.price}</p>
                 <button

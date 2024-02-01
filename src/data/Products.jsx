@@ -9,8 +9,9 @@ const Products=[
         price:'$20.00',
         category: 'Tea',
         size:'10oz',
-        featured: false
-
+        featured: false ,
+        slug:'green-tea',
+        desc:'This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water.'
     }, 
 
     {    
@@ -21,7 +22,9 @@ const Products=[
         price:'$10.00',
         category: 'Tea',
         size:'10oz',
-        featured: false
+        featured: false ,
+        slug:'black-tea',
+        desc:'This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water.'
     },
 
     {   
@@ -32,7 +35,9 @@ const Products=[
         price:'$30.00',
         category: 'Tea',
         size:'10oz',
-        featured: false
+        featured: false ,
+        slug:'blue-tea',
+        desc:'This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water.'
     },
 
     {   
@@ -43,7 +48,9 @@ const Products=[
         price:'$20.00',
         category: 'Tea',
         size:'10oz',
-        featured: false
+        featured: false ,
+        slug:'red-tea',
+        desc:'This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water.'
     },
 
     {   
@@ -54,7 +61,9 @@ const Products=[
         price:'$20.00',
         category: 'Tea',
         size:'10oz',
-        featured: false
+        featured: false ,
+        slug:'orange-tea',
+        desc:'This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water.'
     },
 
     {   
@@ -65,7 +74,9 @@ const Products=[
         price:'$20.00',
         category:'Tea',
         size:'10oz',
-        featured: false
+        featured: false ,
+        slug:'white-tea',
+        desc:'This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water.'
     },
     {   
         id: 7,
@@ -75,7 +86,9 @@ const Products=[
         price:'$20.00',
         category: 'Tea',
         size:'10oz',
-        featured: true
+        featured: true ,
+        slug:'green-tea',
+        desc:'This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water.'
 
     }, 
 
@@ -87,7 +100,9 @@ const Products=[
         price:'$10.00',
         category: 'Tea',
         size:'10oz',
-        featured: true
+        featured: true ,
+        slug:'black-tea',
+        desc:'This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water.'
     },
 
     {   
@@ -98,7 +113,9 @@ const Products=[
         price:'$30.00',
         category: 'Tea',
         size:'10oz',
-        featured: true
+        featured: true ,
+        slug:'blue-tea',
+        desc:'This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water.'
     },
 
     {   
@@ -109,7 +126,9 @@ const Products=[
         price:'$20.00',
         category: 'Tea',
         size:'10oz',
-        featured: true
+        featured: true ,
+        slug:'red-tea',
+        desc:'This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water.'
     },
 
     {   
@@ -120,7 +139,9 @@ const Products=[
         price:'$20.00',
         category: 'Tea',
         size:'10oz',
-        featured: true
+        featured: true ,
+        slug:'orange-tea',
+        desc:'This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water.'
     },
 
     {   
@@ -131,7 +152,9 @@ const Products=[
         price:'$20.00',
         category:'Tea',
         size:'10oz',
-        featured: true
+        featured: true ,
+        slug:'white-tea',
+        desc:'This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is soluble instant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water. This is solubleinstant coffee. 1 spoon makes 1 cup of 125ml coffee. Drink hot or cold in milk or water.'
     },
     
 ]
