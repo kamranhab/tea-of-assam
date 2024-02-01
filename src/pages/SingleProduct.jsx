@@ -36,13 +36,19 @@ function SingleProduct() {
   };
 
   const onDelete = (index) => {
-    setCartItems(currentItems => currentItems.filter((_, idx) => idx !== index));
+    setCartItems((currentItems) =>
+      currentItems.filter((_, idx) => idx !== index)
+    );
   };
 
   const onUpdateQuantity = (index, delta) => {
-    setCartItems(currentItems => currentItems.map((item, idx) => 
-      idx === index ? { ...item, quantity: Math.max(item.quantity + delta, 0) } : item
-    ));
+    setCartItems((currentItems) =>
+      currentItems.map((item, idx) =>
+        idx === index
+          ? { ...item, quantity: Math.max(item.quantity + delta, 0) }
+          : item
+      )
+    );
   };
   return (
     <>
@@ -70,7 +76,9 @@ function SingleProduct() {
               <p>1</p>
               <button>+</button>
             </div> */}
-            <button className="sp-add-to-cart"  onClick={() => addToCart(items)}>Add to Cart</button>
+            <button className="sp-add-to-cart" onClick={() => addToCart(items)}>
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
