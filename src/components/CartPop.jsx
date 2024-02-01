@@ -27,40 +27,28 @@ function CartPop({
         <div className="popup-head">
           <p>My Cart</p>
           <p>{itemCount} Items</p>
-          <button onClick={() => setCartVisible(false)}>
-            Close
-          </button>
+          <button onClick={() => setCartVisible(false)}>Close</button>
         </div>
-          <div className="popup-top">
-            {cartItems.map((item, index) => (
-              <CartProduct
-                key={index}
-                item={item}
-                index={index}
-                onUpdateQuantity={onUpdateQuantity}
-                onDelete={onDelete}
-              />
-            ))}
+        <div className="popup-top">
+          {cartItems.map((item, index) => (
+            <CartProduct
+              key={index}
+              item={item}
+              index={index}
+              onUpdateQuantity={onUpdateQuantity}
+              onDelete={onDelete}
+            />
+          ))}
+        </div>
+        <div className="popup-bottom">
+          <div className="subtotal">
+            <p>Subtotal</p>
+            <p>${subtotal.toFixed(2)} USD</p>
           </div>
-          <div className="popup-bottom">
-            <div className="subtotal">
-              <p>Subtotal</p>
-              <p>${subtotal.toFixed(2)} USD</p>
-            </div>
-            <Link
-              to={{
-                pathname: "/checkout",
-                //UPDATE
-                //UPDATE
-                state: { cartItems },
-                //UPDATE
-                //UPDATE
-              }}
-            >
-              {" "}
-              <button className="buy">Proceed to Buy</button>
-            </Link>
-          </div>
+          <Link to="/checkout">
+            <button className="buy">Proceed to Buy</button>
+          </Link>
+        </div>
       </div>
     </>
   );

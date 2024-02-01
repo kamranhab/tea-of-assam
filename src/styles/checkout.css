@@ -103,6 +103,7 @@ input {
 }
 .checkout-right {
   align-items: center;
+ 
 }
 
 .checkout-left {
@@ -115,11 +116,32 @@ input {
 .order-summary {
   border: 1px solid #ddd;
   border-radius: 4px;
-  padding: 20px;
+  padding: 20px 15px 20px 20px;
   font-family: Arial, sans-serif;
   width: 80%;
   margin-bottom: 15px;
 }
+
+.order-summary-products{
+  height: 150px;
+  overflow: scroll;
+  padding-right: 15px;
+  overflow-x: hidden;
+}
+
+.order-summary-products::-webkit-scrollbar {
+  width:0.5em;
+}
+
+.order-summary-products::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0); 
+}
+
+.order-summary-products::-webkit-scrollbar-thumb {
+  background-color: rgb(213, 213, 213); 
+  border-radius: 20px; 
+}
+
 
 .order-item {
   display: flex;
