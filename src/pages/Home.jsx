@@ -13,11 +13,13 @@ function Home() {
     const savedCartItems = localStorage.getItem('cartItems');
     return savedCartItems ? JSON.parse(savedCartItems) : [];
   });
-  const [cartVisible, setCartVisible] = useState(false);
-
+  
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
+
+  const [cartVisible, setCartVisible] = useState(false);
+
 
   const addToCart = (product) => {
     const existingProduct = cartItems.find(elem => elem.id === product.id);
