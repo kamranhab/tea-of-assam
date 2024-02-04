@@ -7,6 +7,7 @@ import bg from '../assets/bg2.mp4';
 import CartPop from '../components/CartPop.jsx';
 import BottomBar from '../components/BottomBar.jsx'; 
 import Footer from '../components/Footer.jsx';
+import Search from '../components/Search.jsx'
 
 function Home() {
   const [cartItems, setCartItems] = useState(() => {
@@ -19,6 +20,12 @@ function Home() {
   }, [cartItems]);
 
   const [cartVisible, setCartVisible] = useState(false);
+
+
+// Search xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
   const addToCart = (product) => {
@@ -61,7 +68,8 @@ function Home() {
           <source src={bg} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <Header cartCount={cartItems.length} setCartVisible={setCartVisible} />
+        <Header  cartCount={cartItems.length} setCartVisible={setCartVisible} toggleModal={toggleModal}/>
+        <Search isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)} />
         <HeroSection />
         </div>
         <FeaturedSection addToCart={addToCart} />

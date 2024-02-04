@@ -5,7 +5,8 @@ import accountIcon from '../assets/account.svg'
 import cartIcon from '../assets/cart.svg'
 import { Link } from 'react-router-dom'
 
-function Header({ cartCount, setCartVisible }) {
+function Header({ cartCount, setCartVisible, toggleModal }) {
+
     return (
       <div className="header-container">
         <header className="header">
@@ -25,7 +26,7 @@ function Header({ cartCount, setCartVisible }) {
                 </li>
           </ul>
           <div className="head-icons-container">
-            <img src={searchIcon} alt="" className="search-icon head-icons" />
+            <img onClick={toggleModal} src={searchIcon} alt="" className="search-icon head-icons" />
             <img src={accountIcon} alt="" className="account-icon head-icons" />
             <span className="cart-icon-container" onClick={() => setCartVisible(preview => !preview)}>
               <img src={cartIcon} alt="" className="cart-icon head-icons" />
