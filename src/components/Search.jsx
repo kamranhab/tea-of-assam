@@ -35,8 +35,7 @@ function Search({ isOpen, closeModal }) {
              <Link to={`/products/${product.slug}`} state={{ items: product }}> <img
                 className="search-p-img"
                 src={product.image}
-                alt={product.name}
-                style={{ width: "50px", height: "50px" }}
+                alt={product.name} 
               /> </Link>
               <div className="search-p-name-price">
               <Link to={`/products/${product.slug}`} state={{ items: product }}> {product.name} - {product.price} </Link>
@@ -45,7 +44,7 @@ function Search({ isOpen, closeModal }) {
           ))}
         </div>
       </div>
-    </div>
+    </div> 
   );
 }
 

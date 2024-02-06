@@ -7,6 +7,7 @@ import Footer from "../components/Footer.jsx";
 import CartPop from "../components/CartPop.jsx";
 import { Link } from "react-router-dom";
 import Search from "../components/Search.jsx";
+import { toast } from "sonner";
 
 function AllProducts() {
   const [cartItems, setCartItems] = useState(() => {
@@ -94,10 +95,14 @@ function AllProducts() {
                 <p className="all-product-price">{item.price}</p>
                 <button
                   className="all-padd-to-cart"
-                  onClick={() => addToCart(item)}
+                  onClick={() => {
+                    addToCart(item);
+                    toast.success('Added to Cart',  { duration: 1000 } );
+                  }}
                 >
                   Add to Cart
                 </button>
+          
               </div>
             </div>
           ))}

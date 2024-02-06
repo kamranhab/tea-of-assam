@@ -9,6 +9,7 @@ import BottomBar from '../components/BottomBar.jsx';
 import Footer from '../components/Footer.jsx';
 import Search from '../components/Search.jsx'
 
+
 function Home() {
   const [cartItems, setCartItems] = useState(() => {
     const savedCartItems = localStorage.getItem('cartItems');
@@ -59,9 +60,11 @@ function Home() {
       idx === index ? { ...item, quantity: Math.max(item.quantity + delta, 0) } : item
     ));
   };
+  
 
   return (
     <>
+
       {cartVisible && <CartPop cartItems={cartItems} setCartVisible={setCartVisible} onUpdateQuantity={onUpdateQuantity} onDelete={onDelete} />}
       <div className="main-container">
         <video id="video-background" autoPlay muted loop preload="auto">

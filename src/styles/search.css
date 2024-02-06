@@ -14,11 +14,15 @@
   display: flex;
   margin-top: 20px;
 }
+.search-p-img{
+  height: 50px;
+  width: 50px;
+}
 
 .search-input {
   padding: 10px;
   font-size: 15px;
-  border-radius: 0;
+  border-radius: 0; 
   border: 1px solid #fff;
   color: #0f0f0f;
   background: #ffffffdb;

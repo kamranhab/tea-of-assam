@@ -1,6 +1,8 @@
 import "../styles/giftsection.css";
 import GiftProducts from "../data/GiftProducts";
 import { useState } from "react";
+import { Toaster, toast } from "sonner"; 
+
 
 function GiftSection({ giftAddToCart }) {
   const giftSubtitles =
@@ -30,10 +32,14 @@ function GiftSection({ giftAddToCart }) {
 
                 <button
                   className="add-to-cart"
-                  onClick={() => giftAddToCart(item)}
+                  onClick={() => {
+                    giftAddToCart(item);
+                    toast.success('Added to Cart',  { duration: 1000 } );
+                  }}
                 >
                   Add to Cart
                 </button>
+               
               </div>
             </div>
           ))}

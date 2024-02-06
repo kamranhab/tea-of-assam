@@ -8,10 +8,12 @@ import Wholesale from "./pages/Wholesale.jsx";
 import SingleProduct from "./pages/SingleProduct.jsx";
 import { Route, Routes } from "react-router-dom";
 import Faq from "./pages/Faq.jsx";
+import { Toaster } from "sonner";
 
 function App() {
   return (
     <>
+      <Toaster richColors theme="dark"/>
       <Routes>
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
