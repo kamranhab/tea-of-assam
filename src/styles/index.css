@@ -17,7 +17,6 @@ body{
 }
 
 .main-container{
-  position: relative;
   width: 100%;
   overflow: hidden;
   display: flex;

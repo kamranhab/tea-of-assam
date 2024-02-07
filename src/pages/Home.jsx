@@ -8,6 +8,7 @@ import CartPop from '../components/CartPop.jsx';
 import BottomBar from '../components/BottomBar.jsx'; 
 import Footer from '../components/Footer.jsx';
 import Search from '../components/Search.jsx'
+import '../styles/home.css'
 
 
 function Home() {
@@ -63,7 +64,7 @@ function Home() {
   
 
   return (
-    <>
+    <div className='main'>
 
       {cartVisible && <CartPop cartItems={cartItems} setCartVisible={setCartVisible} onUpdateQuantity={onUpdateQuantity} onDelete={onDelete} />}
       <div className="main-container">
@@ -71,7 +72,7 @@ function Home() {
           <source src={bg} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <Header  cartCount={cartItems.length} setCartVisible={setCartVisible} toggleModal={toggleModal}/>
+        <Header  cartCount={cartItems.length} setCartVisible={setCartVisible}  toggleModal={toggleModal}/>
         <Search isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)} />
         <HeroSection />
         </div>
@@ -80,7 +81,7 @@ function Home() {
         <Footer />
         <BottomBar />
       
-    </>
+    </div>
   );
 }
 

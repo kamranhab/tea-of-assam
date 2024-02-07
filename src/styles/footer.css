@@ -12,9 +12,7 @@
     color: #ffffff;
     background-color: #886555;
 }
-.footer-elements li {
-    position: relative;
-}
+
 .footer-elements li::after {
     content: '';
     position: absolute;

@@ -216,7 +216,6 @@ input {
   height: 24px;
   width: auto;
   margin-left: -10px;
-  position: relative;
 }
 .card-icons img:nth-child(1) { z-index: 1; }
 .card-icons img:nth-child(2) { z-index: 2; }

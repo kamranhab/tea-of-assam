@@ -1,6 +1,7 @@
 import "../styles/header.css";
 import headerLogo from "../assets/headerlogo.png";
 import searchIcon from "../assets/search.svg";
+import searchOpen from "../assets/search.png"
 import accountIcon from "../assets/account.svg";
 import cartIcon from "../assets/cart.svg";
 import { Link } from "react-router-dom";
@@ -43,7 +44,7 @@ function Header({ cartCount, setCartVisible, toggleModal }) {
         <div className="head-icons-container">
           <img
             onClick={toggleModal}
-            src={searchIcon}
+            src={`${toggleModal?searchIcon:searchOpen}`}
             alt=""
             className="search-icon head-icons"
           />

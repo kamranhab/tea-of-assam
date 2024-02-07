@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   padding-top: 1vh;
+
 }
 
 .header {
@@ -20,7 +21,7 @@
     border-right: 1px solid rgba(209, 213, 219, 0.3);
     border-bottom: 1px solid rgba(209, 213, 219, 0.3);
   /* glass */
-  z-index: 1000; 
+  z-index:99; 
   padding: 0 20px;
   border-radius: 50px;
 }
@@ -88,6 +89,12 @@
   }
 }
 
+.head-icons-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
 
 .head-icons {
   margin: 0 0.7rem;
@@ -95,9 +102,12 @@
   cursor: pointer;
 }
 
-.cart-icon-container {
-  position: relative;
+.search-icon{
+  position: absolute;
+  z-index: 99999999999999;
+  right: 210px;
 }
+
 
 .cart-counter {
   background-color: #009245;
