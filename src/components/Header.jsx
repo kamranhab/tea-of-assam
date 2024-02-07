@@ -1,16 +1,17 @@
 import "../styles/header.css";
-import "../styles/search.css";
-
 import headerLogo from "../assets/headerlogo.png";
-import searchIcon from "../assets/search.svg";
+import searchImg from "../assets/search2.svg";
+import closeSearch from "../assets/close.svg";
 import accountIcon from "../assets/account.svg";
 import Products from "../data/Products.jsx";
+import dd from '../assets/dd.svg'
 import cartIcon from "../assets/cart.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Header({ cartCount, setCartVisible }) {
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchIcon, setSearchIcon] = useState(searchImg);
   const filteredProducts =
     searchTerm.length >= 2
       ? Products.filter(
@@ -20,11 +21,6 @@ function Header({ cartCount, setCartVisible }) {
             product.brandName.toLowerCase().includes(searchTerm.toLowerCase())
         )
       : [];
-
-  // Search xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const toggleModal = () => setIsModalOpen(!isModalOpen);
-  //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
   return (
     <div className="header-container">
@@ -43,7 +39,7 @@ function Header({ cartCount, setCartVisible }) {
             <Link to="/wholesale">Wholesale</Link>
           </li>
           <li className="pages">
-            Company
+            Company <img className="dd" src={dd} alt="" />
             <ul className="dropdown-content">
               <li>
                 <Link to="/about">About Us</Link>
@@ -60,49 +56,52 @@ function Header({ cartCount, setCartVisible }) {
             </ul>
           </li>
         </ul>
-        <div className="head-icons-container">
-          <div className="head-search-container">
-            <div className="search-modal-content">
-              <input
-                type="text"
-                placeholder="Search Product..."
-                className="head-search-input"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
 
-              <div className="search-results">
-                {filteredProducts.map((product) => (
-                  <div key={product.id} className="search-result-item">
-                    <Link
-                      to={`/products/${product.slug}`}
-                      state={{ items: product }}
-                    >
-                      <img
-                        className="search-p-img"
-                        src={product.image}
-                        alt={product.name}
-                      />
-                    </Link>
-                    <div className="search-p-name-price">
-                      <Link
-                        to={`/products/${product.slug}`}
-                        state={{ items: product }}
-                      >
-                        {product.name} - {product.price}
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <img
-              onClick={toggleModal}
-              src={searchIcon}
-              alt=""
-              className="search-icon head-icons"
+        <div className="head-search-container">
+          <div className="search-modal-content">
+            <input
+              type="text"
+              placeholder="Search products..."
+              className="head-search-input"
+              value={searchTerm}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                setSearchIcon(closeSearch);
+              }}
             />
+
+            <div className="search-results">
+              {filteredProducts.map((product) => (
+                <Link
+                  to={`/products/${product.slug}`}
+                  state={{ items: product }}
+                >
+                  {" "}
+                  <div key={product.id} className="search-result-item">
+                    <img
+                      className="search-p-img"
+                      src={product.image}
+                      alt={product.name}
+                    />
+
+                    <div className="search-p-name">{product.name}</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
+          <img
+            onClick={() => {
+              setSearchTerm("");
+              setSearchIcon(searchImg);
+            }}
+            src={searchIcon}
+            alt=""
+            className="search-icon head-icons"
+          />
+        </div>
+
+        <div className="head-icons-container">
           <img src={accountIcon} alt="" className="account-icon head-icons" />
           <span
             className="cart-icon-container"

@@ -20,7 +20,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1vw;
   align-items: center;
-  margin-top: 15vh;
+  margin-top: 15vh; 
 }
 
 .all-products-600px {

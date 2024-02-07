@@ -3,6 +3,7 @@ import Footer from "../components/Footer.jsx";
 import BottomBar from "../components/BottomBar.jsx";
 import Header from "../components/Header.jsx";
 import CartPop from "../components/CartPop.jsx";
+import { toast } from "sonner";
 
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -20,8 +21,6 @@ function SingleProduct() {
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
-
-
 
   const addToCart = (product) => {
     const existingProduct = cartItems.find((elem) => elem.id === product.id);
@@ -63,8 +62,8 @@ function SingleProduct() {
           onDelete={onDelete}
         />
       )}
-      <Header  cartCount={cartItems.length} setCartVisible={setCartVisible} />
-       
+      <Header cartCount={cartItems.length} setCartVisible={setCartVisible} />
+
       <div className="single-product-container">
         <div className="sp-container">
           <div className="sp-img-container">
@@ -80,7 +79,13 @@ function SingleProduct() {
               <p>1</p>
               <button>+</button>
             </div> */}
-            <button className="sp-add-to-cart" onClick={() => addToCart(items)}>
+            <button
+              className="sp-add-to-cart"
+              onClick={() => {
+                addToCart(items);
+                toast.success("Added to Cart", { duration: 1000 });
+              }}
+            >
               Add to Cart
             </button>
           </div>

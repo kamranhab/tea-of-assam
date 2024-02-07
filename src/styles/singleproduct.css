@@ -5,6 +5,13 @@
   align-items: center;
   height: 75vh;
   margin-top: 10vh;
+  background-color: #000;
+  background-image: radial-gradient(
+      at 50% 50%,
+      hsla(162, 77%, 40%, 0.173) 0,
+      transparent 50%
+    ),
+    radial-gradient(at 82% 65%, hsl(218, 39%, 11%) 0, transparent 50%);
 }
 
 .sp-container {
@@ -16,7 +23,7 @@
 
 .sp-img-container {
   border-radius: 20px;
-  background-color: #282217;
+  background-color: #17b5852c;
   border: 1px solid #e3e3e3a5;
   height: 400px;
   width: 30%;
@@ -62,12 +69,12 @@
 }
 
 .sp-add-to-cart {
-  color: #000000;
-  background-color: #A7897B;
+  color: #e1e1e1;
+  background-color: #89b8b700;
   box-shadow: 2px 2px 20px -1px rgba(0, 0, 0, 0.125);
+  border: 1px solid #ffffffac;
   border-radius: 20px;
   padding: 10px 30px;
-  border: none;
   font-size: 1rem;
   font-weight: 600;
   margin: 30px 8px 5px 0;
@@ -75,7 +82,7 @@
 }
 .sp-add-to-cart:hover {
   color: #000000;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.9);
   transition: 0.7s;
   cursor: pointer;
 }

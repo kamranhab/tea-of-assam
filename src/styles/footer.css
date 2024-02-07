@@ -1,5 +1,6 @@
 .footer-main{
     width: 100%;
+    
 }
 .footer-elements{
     list-style-type: none;
@@ -8,11 +9,10 @@
     align-items: center;
     gap: 50px;
     min-height:15vh;
+    border-top:1px solid #ffffff27;
     width: 100%;
-    color: #ffffff;
-    background-color: #237a57;
-    background: -webkit-linear-gradient(to right, #093028, #237a57); 
-  background: linear-gradient(to left, #093028, #237a57);  
+    color: #c0c0c0;
+    background-color: #000000;
 }
 
 .footer-elements li::after {
