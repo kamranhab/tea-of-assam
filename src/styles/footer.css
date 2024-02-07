@@ -10,7 +10,9 @@
     min-height:15vh;
     width: 100%;
     color: #ffffff;
-    background-color: #886555;
+    background-color: #237a57;
+    background: -webkit-linear-gradient(to right, #093028, #237a57); 
+  background: linear-gradient(to left, #093028, #237a57);  
 }
 
 .footer-elements li::after {

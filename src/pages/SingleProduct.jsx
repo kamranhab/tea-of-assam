@@ -3,7 +3,7 @@ import Footer from "../components/Footer.jsx";
 import BottomBar from "../components/BottomBar.jsx";
 import Header from "../components/Header.jsx";
 import CartPop from "../components/CartPop.jsx";
-import Search from "../components/Search.jsx";
+
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -21,10 +21,7 @@ function SingleProduct() {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
-   // Search xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-   const [isModalOpen, setIsModalOpen] = useState(false);
-   const toggleModal = () => setIsModalOpen(!isModalOpen);
-   //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 
   const addToCart = (product) => {
     const existingProduct = cartItems.find((elem) => elem.id === product.id);
@@ -66,8 +63,8 @@ function SingleProduct() {
           onDelete={onDelete}
         />
       )}
-      <Header  cartCount={cartItems.length} setCartVisible={setCartVisible} toggleModal={toggleModal}/>
-        <Search isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)} />
+      <Header  cartCount={cartItems.length} setCartVisible={setCartVisible} />
+       
       <div className="single-product-container">
         <div className="sp-container">
           <div className="sp-img-container">

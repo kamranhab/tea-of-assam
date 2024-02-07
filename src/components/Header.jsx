@@ -1,12 +1,31 @@
 import "../styles/header.css";
+import "../styles/search.css";
+
 import headerLogo from "../assets/headerlogo.png";
 import searchIcon from "../assets/search.svg";
-import searchOpen from "../assets/search.png"
 import accountIcon from "../assets/account.svg";
+import Products from "../data/Products.jsx";
 import cartIcon from "../assets/cart.svg";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-function Header({ cartCount, setCartVisible, toggleModal }) {
+function Header({ cartCount, setCartVisible }) {
+  const [searchTerm, setSearchTerm] = useState("");
+  const filteredProducts =
+    searchTerm.length >= 2
+      ? Products.filter(
+          (product) =>
+            product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            product.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            product.brandName.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      : [];
+
+  // Search xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
+  //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
   return (
     <div className="header-container">
       <header className="header">
@@ -42,12 +61,48 @@ function Header({ cartCount, setCartVisible, toggleModal }) {
           </li>
         </ul>
         <div className="head-icons-container">
-          <img
-            onClick={toggleModal}
-            src={`${toggleModal?searchIcon:searchOpen}`}
-            alt=""
-            className="search-icon head-icons"
-          />
+          <div className="head-search-container">
+            <div className="search-modal-content">
+              <input
+                type="text"
+                placeholder="Search Product..."
+                className="head-search-input"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+
+              <div className="search-results">
+                {filteredProducts.map((product) => (
+                  <div key={product.id} className="search-result-item">
+                    <Link
+                      to={`/products/${product.slug}`}
+                      state={{ items: product }}
+                    >
+                      <img
+                        className="search-p-img"
+                        src={product.image}
+                        alt={product.name}
+                      />
+                    </Link>
+                    <div className="search-p-name-price">
+                      <Link
+                        to={`/products/${product.slug}`}
+                        state={{ items: product }}
+                      >
+                        {product.name} - {product.price}
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <img
+              onClick={toggleModal}
+              src={searchIcon}
+              alt=""
+              className="search-icon head-icons"
+            />
+          </div>
           <img src={accountIcon} alt="" className="account-icon head-icons" />
           <span
             className="cart-icon-container"

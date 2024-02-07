@@ -6,7 +6,7 @@ import BottomBar from "../components/BottomBar.jsx";
 import Footer from "../components/Footer.jsx";
 import CartPop from "../components/CartPop.jsx";
 import { Link } from "react-router-dom";
-import Search from "../components/Search.jsx";
+// import Search from "../components/Search.jsx";
 import { toast } from "sonner";
 
 function AllProducts() {
@@ -22,10 +22,10 @@ function AllProducts() {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  // Search xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const toggleModal = () => setIsModalOpen(!isModalOpen);
-  //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  // // Search xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const toggleModal = () => setIsModalOpen(!isModalOpen);
+  // //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
   const addToCart = (product) => {
     const existingProduct = cartItems.find((elem) => elem.id === product.id);
@@ -71,13 +71,14 @@ function AllProducts() {
       <Header
         cartCount={cartItems.length}
         setCartVisible={setCartVisible}
-        toggleModal={toggleModal}
+       
       />
-      <Search isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)} />
+       {/* toggleModal={toggleModal} */}
+      {/* <Search isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)} /> */}
       <div className="all-products-600px">
         <div className="all-products">
           {items.map((item) => (
-            <div key={item.id} className="product">
+            <div key={item.id} className="all-product">
               <Link to={`/products/${item.slug}`} state={{ items: item }}>
                 <img
                   className="all-product-image"

@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 1vh;
 
 }
 
@@ -16,7 +15,7 @@
   top: 8px; 
   /* glass */
     backdrop-filter: blur(6px) saturate(120%);
-    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%); 
     background-color: #ffffff00;
     border-right: 1px solid rgba(209, 213, 219, 0.3);
     border-bottom: 1px solid rgba(209, 213, 219, 0.3);
@@ -25,6 +24,7 @@
   padding: 0 20px;
   border-radius: 50px;
 }
+
 
 .header-logo {
   width: 12rem;
@@ -102,10 +102,27 @@
   cursor: pointer;
 }
 
-.search-icon{
-  position: absolute;
-  z-index: 99999999999999;
-  right: 210px;
+.head-search-container{
+ height: 6vh;
+  display: flex;
+  align-items: center;
+  padding: 0 5px 0 20px;
+
+  /* glass */
+  backdrop-filter: blur(5px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  background-color: #ffffff00;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  /* glass */
+  border-radius: 50px;
+}
+
+
+.head-search-input{
+  background-color: transparent;
+  border: none;
+  color:#fff;
+  outline: none;
 }
 
 
@@ -120,6 +137,69 @@
   right: -4px;
   bottom: 20px;
 }
+
+
+/* Header Search Header Search Header Search */ 
+/* Header Search Header Search Header Search */ 
+/* Header Search Header Search Header Search */ 
+
+.search-modal-content {
+  
+}
+
+.search-modal-content.open {
+  width: 475px; /* Width when open */
+  opacity: 1; /* Fully visible when open */
+  transform: translateY(-50%) scale(1); /* Scale back to normal size */
+  visibility: visible; /* Make sure it's visible when open */
+}
+
+.search-modal-content::-webkit-scrollbar {
+  width:0.7em;
+}
+
+.search-modal-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0); 
+}
+
+.search-modal-content::-webkit-scrollbar-thumb {
+  background-color: rgb(213, 213, 213); 
+  border-radius: 20px; 
+}
+/* Styling for individual search result items */
+.search-result-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee; /* subtle separation */
+  padding-bottom: 15px;
+}
+
+.search-p-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover; /* Ensure images maintain aspect ratio */
+  margin-right: 15px;
+  border-radius: 4px; /* Soften the image corners */
+}
+
+.search-p-name-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-p-name-price a {
+  color: #333;
+  text-decoration: none; /* Remove underlines */
+  font-weight: 500; /* Increase font weight for visibility */
+  margin-bottom: 5px; /* Space between name and price */
+}
+
+
+
+
+
 @media only screen and (max-width: 768px) {
   .navigation{
     display: none;
