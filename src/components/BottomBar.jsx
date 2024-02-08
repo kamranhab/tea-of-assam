@@ -5,6 +5,7 @@ import bsearchIcon from '../assets/search.svg';
 import baccountIcon from '../assets/baccount.png';
 import bhamburgIcon from '../assets/bham.png'
 import { Link } from 'react-router-dom';
+import Search from './Search';
 
 function BottomBar() {
 
@@ -20,7 +21,6 @@ function BottomBar() {
         <div className='bicons-container'>
           <Link to='/'><img src={bhomeIcon} alt="" className="bhome" /></Link> 
           <img src={baccountIcon} alt="" className="baccount" />
-          <img src={bsearchIcon} alt="" className="bsearch" />
           
           <div className="bhamburg" onClick={toggleDropdown}>
             <img src={bhamburgIcon} alt="" className="bham" />

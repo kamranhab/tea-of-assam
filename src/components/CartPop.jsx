@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/cartpop.css";
 import CartProduct from "./CartProduct.jsx";
+import React, { useEffect, useRef } from 'react';
 
 function CartPop({
   cartItems = [],
@@ -8,13 +9,24 @@ function CartPop({
   onUpdateQuantity,
   onDelete,
 }) {
-  //CHECKING ARRAY
-  //CHECKING ARRAY
-  //CHECKING ARRAY
-  console.log("Cart items in CartPop:", cartItems);
-  //CHECKING ARRAY
-  //CHECKING ARRAY
-  //CHECKING ARRAY
+  const popupRef = useRef(); 
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        setCartVisible(false); // Close popup
+      }
+    }
+
+    //event listener
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [setCartVisible]); // Dependency array
+
   const itemCount = cartItems.reduce((count, item) => count + item.quantity, 0);
   const subtotal = cartItems.reduce((total, item) => {
     const itemPrice = item.price ? parseFloat(item.price.substring(1)) : 0;
@@ -23,7 +35,7 @@ function CartPop({
 
   return (
     <>
-      <div className="popupcart">
+      <div className="popupcart" ref={popupRef}>
         <div className="popup-head">
           <p>My Cart</p>
           <p>{itemCount} Items</p>

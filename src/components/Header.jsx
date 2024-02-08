@@ -4,23 +4,25 @@ import searchImg from "../assets/search2.svg";
 import closeSearch from "../assets/close.svg";
 import accountIcon from "../assets/account.svg";
 import Products from "../data/Products.jsx";
-import dd from '../assets/dd.svg'
+import dd from "../assets/dd.svg";
 import cartIcon from "../assets/cart.svg";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import Search from "./Search.jsx";
 
 function Header({ cartCount, setCartVisible }) {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchIcon, setSearchIcon] = useState(searchImg);
-  const filteredProducts =
-    searchTerm.length >= 2
-      ? Products.filter(
-          (product) =>
-            product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            product.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            product.brandName.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-      : [];
+  // const inputRef = useRef(null);
+  // const [searchTerm, setSearchTerm] = useState("");
+  // const [searchIcon, setSearchIcon] = useState(searchImg);
+  // const filteredProducts =
+  //   searchTerm.length >= 2
+  //     ? Products.filter(
+  //         (product) =>
+  //           product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //           product.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //           product.brandName.toLowerCase().includes(searchTerm.toLowerCase())
+  //       )
+  //     : [];
 
   return (
     <div className="header-container">
@@ -33,7 +35,7 @@ function Header({ cartCount, setCartVisible }) {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/all-products">All Products</Link>
+            <Link to="/all-products">Products</Link>
           </li>
           <li>
             <Link to="/wholesale">Wholesale</Link>
@@ -56,58 +58,14 @@ function Header({ cartCount, setCartVisible }) {
             </ul>
           </li>
         </ul>
-
-        <div className="head-search-container">
-          <div className="search-modal-content">
-            <input
-              type="text"
-              placeholder="Search products..."
-              className="head-search-input"
-              value={searchTerm}
-              onChange={(e) => {
-                setSearchTerm(e.target.value);
-                setSearchIcon(closeSearch);
-              }}
-            />
-
-            <div className="search-results">
-              {filteredProducts.map((product) => (
-                <Link
-                  to={`/products/${product.slug}`}
-                  state={{ items: product }}
-                >
-                  {" "}
-                  <div key={product.id} className="search-result-item">
-                    <img
-                      className="search-p-img"
-                      src={product.image}
-                      alt={product.name}
-                    />
-
-                    <div className="search-p-name">{product.name}</div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-          <img
-            onClick={() => {
-              setSearchTerm("");
-              setSearchIcon(searchImg);
-            }}
-            src={searchIcon}
-            alt=""
-            className="search-icon head-icons"
-          />
-        </div>
-
+        <Search />
         <div className="head-icons-container">
           <img src={accountIcon} alt="" className="account-icon head-icons" />
           <span
             className="cart-icon-container"
-            onClick={() => setCartVisible((preview) => !preview)}
+            
           >
-            <img src={cartIcon} alt="" className="cart-icon head-icons" />
+            <img onClick={() => setCartVisible((preview) => !preview)} src={cartIcon} alt="" className="cart-icon head-icons" />
             {cartCount > 0 && <span className="cart-counter">{cartCount}</span>}
           </span>
         </div>

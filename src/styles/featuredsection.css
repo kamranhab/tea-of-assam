@@ -39,7 +39,7 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 625px) {
   .featured-text {
     font-size: 0.7rem;
   }

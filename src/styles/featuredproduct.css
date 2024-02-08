@@ -83,7 +83,7 @@
   transition: 0.7s;
   cursor: pointer;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 777px) {
   .featured-products {
     margin: 2vh 0;
     display: grid;
@@ -91,7 +91,7 @@
     gap: 0.8vw;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 625px) {
   .featured-products-600px {
     display: flex;
   }
