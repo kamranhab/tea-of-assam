@@ -64,7 +64,7 @@ function FeaturedProduct({ addToCart }) {
       </div>
       {windowWidth < 600 && totalPages > 1 && (
         <div className="pagination">
-          <img src={rightbutton} onClick={paginate} Next Page />
+          <img src={rightbutton} onClick={paginate}/>
         </div>
       )}
     </div>

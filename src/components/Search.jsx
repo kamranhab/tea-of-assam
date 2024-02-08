@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import searchImg from "../assets/search2.svg";
 import closeSearch from "../assets/close.svg";
@@ -9,6 +9,8 @@ export default function Search() {
   const inputRef = useRef(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchIcon, setSearchIcon] = useState(searchImg);
+  const [pholder, setPlaceholder] = useState("Search products...");
+
   // Initialize openInput as a boolean state
   const [isOpen, setIsOpen] = useState(false); // Renamed for clarity
 
@@ -20,7 +22,24 @@ export default function Search() {
           product.brandName.toLowerCase().includes(searchTerm.toLowerCase())
       )
     : [];
+   
+    useEffect(() => {
+      function handleResize() {
+        if (window.innerWidth <= 800) {
+          setPlaceholder("Search");
+        } else {
+          setPlaceholder("Search products...");
+        }
+      }
+       // Set initial state based on current window width
+    handleResize();
 
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   // Toggle function to open/close the search input
   const toggleInput = () => {
     setIsOpen(!isOpen); // Toggle the state
@@ -45,7 +64,7 @@ export default function Search() {
       <div className="search-modal-content">
         <input
           type="text"
-          placeholder={isOpen ?"Search products...":"..."}
+          placeholder={isOpen ?pholder:"..."}
           className={isOpen ? 'head-search-input-open' : 'head-search-input'}
           value={searchTerm}
           onChange={(e) => {

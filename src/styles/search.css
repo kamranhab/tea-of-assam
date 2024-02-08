@@ -62,6 +62,7 @@
 
 .head-search-input-open {
   display: block;
+  width: 100%;
   background-color: transparent;
   border: none;
   color: #242424;
@@ -126,15 +127,23 @@
   
 }
 
-@media only screen and (max-width:777px){
+@media only screen and (max-width:800px){
     .head-search-container-open {
-       
+       height:28px;
 
     }
-    .head-search-container {
 
+
+    .head-search-container {
+        height:28px;
+    }
+    .head-search-container img{
+        padding: 2px;
     }
 
     .search-results {
+    }
+    .head-search-input-open {
+
     }
 }
