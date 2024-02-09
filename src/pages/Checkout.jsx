@@ -8,6 +8,7 @@ import disc from "../assets/disc.png";
 import Footer from "../components/Footer.jsx";
 import PagesHeader from "../components/PagesHeader.jsx"
 import BottomBar from "../components/BottomBar.jsx";
+import { toast } from "sonner";
 
 function Checkout() {
 
@@ -52,6 +53,7 @@ function Checkout() {
     if (!custName.trim()) {
       setcustNameValid(false);
       isValid = false;
+      toast.error("Invalid Name ")
     } else {
       setcustNameValid(true);
     }
@@ -59,6 +61,7 @@ function Checkout() {
     if (!email.trim() || !email.includes("@")) {
       setEmailValid(false);
       isValid = false;
+      toast.error("Invalid Email")
     } else {
       setEmailValid(true);
     }
@@ -66,6 +69,7 @@ function Checkout() {
     if (!streetAddress.trim()) {
       setStreetAddressValid(false);
       isValid = false;
+      toast.error("Invalid Address")
     } else {
       setStreetAddressValid(true);
     }
@@ -73,6 +77,7 @@ function Checkout() {
     if (!city.trim()) {
       setCityValid(false);
       isValid = false;
+      toast.error("Invalid City")
     } else {
       setCityValid(true);
     }
@@ -80,6 +85,7 @@ function Checkout() {
     if (!zip.trim() || !/^\d{5}(-\d{4})?$/.test(zip)) {
       setZipValid(false);
       isValid = false;
+      toast.error("Invalid ZipCode")
     } else {
       setZipValid(true);
     }
@@ -87,6 +93,7 @@ function Checkout() {
     if (!selectedState) {
       setSelectedStateValid(false);
       isValid = false;
+      toast.error("Invalid State")
     } else {
       setSelectedStateValid(true);
     }
@@ -94,12 +101,17 @@ function Checkout() {
     if (!mobile.trim() || !/^\d+$/.test(mobile)) {
       setMobileValid(false);
       isValid = false;
+      toast.error("Invalid Mobile Number")
     } else {
       setMobileValid(true);
     }
 
     return isValid;
+
+
   }
+
+
 
   function order(submit) {
     submit.preventDefault();

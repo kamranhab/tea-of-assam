@@ -37,34 +37,24 @@ export default function Search() {
     // Add event listener for window resize
     window.addEventListener('resize', handleResize);
 
-    // Cleanup listener on component unmount
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  // Toggle function to open/close the search input
+ 
   const toggleInput = () => {
-    setIsOpen(!isOpen); // Toggle the state
+    setIsOpen(!isOpen);
     if (!isOpen) {
-      setTimeout(() => inputRef.current.focus(), 0); // Focus after state update
+      setTimeout(() => inputRef.current.focus(), 0); 
     }
   };
-  const toggleNew=()=>{
-    if (!isOpen){
-        {   toggleInput();
-            setSearchTerm("");
-            setSearchIcon(isOpen ? searchImg : closeSearch); // Change icon based on state
-          }
-    }
-    }
+  
   return (
     <div
-    onClick={() => {
-        toggleNew();
-      }}
+    
     className={isOpen ? 'head-search-container-open' : 'head-search-container'}>
       <div className="search-modal-content">
         <input
           type="text"
-          placeholder={isOpen ?pholder:"..."}
+          placeholder={pholder}
           className={isOpen ? 'head-search-input-open' : 'head-search-input'}
           value={searchTerm}
           onChange={(e) => {

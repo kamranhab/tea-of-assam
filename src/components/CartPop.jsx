@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles/cartpop.css";
-import cartClose from "../assets/close-cart.svg"
+import cartClose from "../assets/close-cart.svg";
 import CartProduct from "./CartProduct.jsx";
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
 
 function CartPop({
   cartItems = [],
@@ -10,7 +11,15 @@ function CartPop({
   onUpdateQuantity,
   onDelete,
 }) {
-  const popupRef = useRef(); 
+  const popupRef = useRef();
+  const navigate = useNavigate();
+  const [chLink, setChLink] = useState("");
+
+  const checkCart = () => {
+    if (itemCount == 0) {
+      setChLink("");
+    } else setChLink("/checkout");
+  };
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -20,11 +29,11 @@ function CartPop({
     }
 
     //event listener
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
 
     // Cleanup event listener on component unmount
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [setCartVisible]); // Dependency array
 
@@ -40,7 +49,7 @@ function CartPop({
         <div className="popup-head">
           <p>My Cart</p>
           <p>{itemCount} Items</p>
-          <img src={cartClose} onClick={() => setCartVisible(false)}/>
+          <img src={cartClose} onClick={() => setCartVisible(false)} />
         </div>
         <div className="popup-top">
           {cartItems.map((item, index) => (
@@ -58,9 +67,18 @@ function CartPop({
             <p>Subtotal</p>
             <p>${subtotal.toFixed(2)} USD</p>
           </div>
-          <Link to="/checkout">
-            <button className="buy">Proceed to Buy</button>
-          </Link>
+
+
+          <button
+            onClick={() =>
+              itemCount > 0
+                ? navigate("/checkout")
+                : toast.warning("Your cart is empty!", { duration: 1000 })
+            }
+            className="buy"
+          >
+            Proceed to Buy
+          </button>
         </div>
       </div>
     </>

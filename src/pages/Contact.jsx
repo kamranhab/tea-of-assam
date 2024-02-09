@@ -65,7 +65,7 @@ function Contact() {
       <PagesHeader />
 
       <form onSubmit={order} className="contact-form">
-        <h1 className="contact-head">Complete the form to contact us</h1>
+        <h1 className="contact-head">Contact Us</h1>
         <input
           id="custname"
           key={`custName-${animationKey}`}
