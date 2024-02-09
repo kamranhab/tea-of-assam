@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/cartpop.css";
+import cartClose from "../assets/close-cart.svg"
 import CartProduct from "./CartProduct.jsx";
 import React, { useEffect, useRef } from 'react';
 
@@ -39,7 +40,7 @@ function CartPop({
         <div className="popup-head">
           <p>My Cart</p>
           <p>{itemCount} Items</p>
-          <button onClick={() => setCartVisible(false)}>Close</button>
+          <img src={cartClose} onClick={() => setCartVisible(false)}/>
         </div>
         <div className="popup-top">
           {cartItems.map((item, index) => (

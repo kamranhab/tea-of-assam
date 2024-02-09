@@ -6,15 +6,18 @@
   height: 100vh;
   padding: 0;
   margin: 0;
-  background-image: url(../assets/bg-pages.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: repeat;
+  background-image: radial-gradient(
+      at 50% 50%,
+      hsla(162, 77%, 40%, 0.173) 0,
+      transparent 50%
+    ),
+    radial-gradient(at 82% 65%, hsl(218, 39%, 11%) 0, transparent 50%);
+
 }
 
 .contact-head {
-  font-size: 1.6rem;
-  color: #ddd;
+  font-size: 1.5rem;
+  color: #d6d6d6;
   align-self: flex-start;
   padding-bottom:30px;
 }
@@ -27,7 +30,7 @@
   justify-content: center;
 }
 
-.contact-form > input {
+.contact-form input {
   color: #000000;
   width: 100%;
   padding: 10px;
@@ -35,7 +38,8 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: #ffffff;
+  border: 1px solid #ffffff32;
+  background-color: transparent;
 }
 
 .contact-form input[type="submit"] {
@@ -44,15 +48,15 @@
   border: none;
   border-radius: 4px;
  
-  background-color: #4b830d;
-  color: white;
+  background-color: #dfdfdf;
+  color: rgb(0, 0, 0);
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .contact-form input[type="submit"]:hover {
-  background-color: #396705;
+  background-color: #ababab;
 }
 
 .contact-form input.contact-error-input {
@@ -65,7 +69,8 @@
   height: 110px;
   margin-bottom: 10px;
   padding: 10px;
-  background-color: #ffffff;
+  border: 1px solid #ffffff32;
+  background-color: transparent;
 }
 .thanks{
   padding:10px;

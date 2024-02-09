@@ -6,7 +6,13 @@ html,body,#root{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-image: url(../assets/bg-pages.jpg);
+    background-image: radial-gradient(
+      at 50% 50%,
+      hsla(162, 77%, 40%, 0.173) 0,
+      transparent 50%
+    ),
+    radial-gradient(at 82% 65%, hsl(218, 39%, 11%) 0, transparent 50%);
+
   }
   
   .about-main-content {

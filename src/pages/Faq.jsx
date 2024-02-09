@@ -5,7 +5,6 @@ import BottomBar from "../components/BottomBar.jsx";
 import '../styles/faq.css'; 
 
 function Faq() {
-  // Example of how to manage an accordion-style FAQ where only one answer can be open at a time
   const [activeIndex, setActiveIndex] = useState(null);
 
   const questionsAnswers = [

@@ -1,5 +1,5 @@
 import "../styles/cartpop.css"
-import deleteImg from '../assets/delete.png'
+import deleteImg from '../assets/delete.svg'
 
 function CartProduct({ item, index, onUpdateQuantity, onDelete }) {
     const { image, name, price, size, quantity } = item;
@@ -12,7 +12,7 @@ function CartProduct({ item, index, onUpdateQuantity, onDelete }) {
         onDelete(index);
     };
 
-    return (
+    return ( 
         <div className="popup-product-card">
             <div className="card-top">
                 <img src={image} alt={name} />

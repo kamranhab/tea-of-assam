@@ -3,9 +3,13 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  background-image: url('../assets/bg-pages.jpg'); /* Adjust the path as needed */
-  background-size: cover; /* Cover the entire page */
-  background-position: center; /* Center the background image */
+  background-image: radial-gradient(
+      at 50% 50%,
+      hsla(162, 77%, 40%, 0.173) 0,
+      transparent 50%
+    ),
+    radial-gradient(at 82% 65%, hsl(218, 39%, 11%) 0, transparent 50%);
+
   color: #ffffff; /* Set default text color to white for better contrast */
 }
 
@@ -46,7 +50,7 @@
   line-height: 1.6;
   font-weight:600 ;
   width: fit-content;
-  background-color: #4c830d44;
+  background-color: #88ff0049;
 }
 
 .contact-us a {

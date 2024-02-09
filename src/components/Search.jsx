@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import searchImg from "../assets/search2.svg";
-import closeSearch from "../assets/close.svg";
+import searchImg from "../assets/search.svg";
+import closeSearch from "../assets/close2.svg";
 import Products from "../data/Products.jsx";
 import '../styles/search.css';
 

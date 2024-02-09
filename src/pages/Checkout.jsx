@@ -6,6 +6,7 @@ import mastercard from "../assets/master.png";
 import amex from "../assets/amex.png";
 import disc from "../assets/disc.png";
 import Footer from "../components/Footer.jsx";
+import PagesHeader from "../components/PagesHeader.jsx"
 import BottomBar from "../components/BottomBar.jsx";
 
 function Checkout() {
@@ -134,7 +135,10 @@ function Checkout() {
 
   return (
     <>
+     <div className="checkout-page">
+      <PagesHeader/>
       <div className="checkout-main-container">
+
         <form onSubmit={order} className="checkout-form">
           <div className="checkout-left">
             <label>Name</label>
@@ -223,7 +227,7 @@ function Checkout() {
           <div className="checkout-right">
             <div className="order-summary">
               <div className="order-summary-products">
-                {/* Map over cartItems to display them */}
+               
                 {cartItems.map((item, index) => (
                   <div key={index} className="order-item">
                     <img
@@ -309,6 +313,7 @@ function Checkout() {
       </div>
       <Footer />
       <BottomBar />
+      </div>
     </>
   );
 }
