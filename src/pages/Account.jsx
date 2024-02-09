@@ -61,7 +61,7 @@ function Contact() {
   }
 
   return (
-    <div className="contact-container">
+    <div className="account-container">
       <PagesHeader />
 
       <form onSubmit={order} className="contact-form">
