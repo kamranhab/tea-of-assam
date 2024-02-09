@@ -8,9 +8,8 @@
 }
 
 .hero-heading {
-  color: #c3c3c3;
-  font-weight: 700;
-  font-size: 2.3rem;
+  color: #c1c1c1e7;
+  font-size: 2.2rem;
 }
 
 .hero-subtitle {
@@ -19,6 +18,8 @@
   font-size: 1.3rem;
   margin-top: 1.5vh;
   margin-bottom: 5vh;
+  text-align: center;
+  line-height: 1.5;
 }
 
 .shop-now {
