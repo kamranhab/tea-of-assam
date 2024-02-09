@@ -67,7 +67,7 @@ function SingleProduct() {
       <div className="single-product-container">
         <div className="sp-container">
           <div className="sp-img-container">
-            <img src={items.image} className="sp-img" />
+            <img src={items.image} className="sp-img"/> 
           </div>
           <div className="sp-details">
             <h3 className="sp-name">{items.name}</h3>

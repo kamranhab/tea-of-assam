@@ -4,6 +4,7 @@ import AllProducts from "./pages/AllProducts.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import Contact from "./pages/Contact.jsx";
 import Policies from "./pages/Policies.jsx";
+import Account from "./pages/Account.jsx"
 import Wholesale from "./pages/Wholesale.jsx";
 import SingleProduct from "./pages/SingleProduct.jsx";
 import { Route, Routes } from "react-router-dom";
@@ -13,12 +14,13 @@ import { Toaster } from "sonner";
 function App() {
   return (
     <>
-      <Toaster position="bottom-center" richColors theme="dark"/>
+      <Toaster richColors theme="dark"/>
       <Routes>
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/all-products" element={<AllProducts />} />
         <Route path="/products/:id" element={<SingleProduct />} />
+        <Route path="/account" element={<Account />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/policies" element={<Policies />} />

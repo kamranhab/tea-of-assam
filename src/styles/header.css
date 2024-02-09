@@ -5,7 +5,7 @@
 }
 
 .header {
-  min-width: 84%;
+  min-width: 84%; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,7 +40,7 @@
 
 .navigation > li {
   margin: 0 0.6rem;
-  color: #f9f9f9;
+  color: #ebebeb;
   font-weight: 500;
   font-size:1rem;
   cursor: pointer;

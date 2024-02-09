@@ -10,8 +10,8 @@
 
 .product:hover {
   box-shadow: 5px 5px 30px 2px rgba(0, 0, 0, 0.086);
-  background-color: #00000086;
-  transition: 0.8s;
+  background-color: #1b1b1b61;
+  transition: 0.5s;
 }
 
 .featured-products {
@@ -68,10 +68,9 @@
 }
 
 .padd-to-cart {
-  color: #e1e1e1;
-  background-color: #89b8b700;
-  box-shadow: 2px 2px 20px -1px rgba(0, 0, 0, 0.125);
-  border: 1px solid #ffffffac;
+  color: #d4d4d4;
+  background-color: #ffffff0f;
+  border: 1px solid #ffffff1a;
   border-radius: 20px;
   padding: 8px 15px;
   font-size: 0.9rem;
@@ -79,9 +78,8 @@
   text-transform: uppercase;
 }
 .padd-to-cart:hover {
-  color: #000000;
-  background-color: rgba(255, 255, 255, 0.9);
-  transition: 0.7s;
+  background-color: #ffffff20;
+  transition: 0.5s;
   cursor: pointer;
 }
 @media only screen and (max-width: 777px) {

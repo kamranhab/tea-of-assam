@@ -100,7 +100,7 @@ function AllProducts() {
                 </button>
           
               </div>
-            </div>
+            </div> 
           ))}
         </div>
       </div>

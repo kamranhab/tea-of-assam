@@ -40,7 +40,7 @@
 }
 
 .gift-product {
-  border-radius: 20px;
+  border-radius: 8px;
   width: 25vw;
   display: flex;
   padding: 25px 20px;
@@ -48,14 +48,12 @@
   align-items: center;
   backdrop-filter: blur(5px) saturate(180%);
   -webkit-backdrop-filter: blur(20px);
-  background-color: rgba(255, 255, 255, 0.067);
-  border-radius: 10px;
+  background-color: #ffffff15;
   border: 1px solid rgba(209, 213, 219, 0.3);
-  overflow: hidden;
 }
 .gift-product:hover {
   box-shadow: 5px 5px 30px 2px rgba(0, 0, 0, 0.086);
-  background-color: #00000000;
+  background-color: #ffffff18;
   transition: 0.8s;
 }
 
@@ -75,7 +73,7 @@
 .gift-image {
   width: 12vw;
   padding: 5px 30px 5px 0;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px;
 }
 
 .gift-category {
@@ -100,10 +98,10 @@
 
 .add-to-cart {
   width: 100%;
-  color: #e1e1e1;
-  background-color: #89b8b700;
+  color: #d4d4d4;
+  background-color: #ffffff0f;
+  border: 1px solid #ffffff1a;
   box-shadow: 2px 2px 20px -1px rgba(0, 0, 0, 0.125);
-  border: 1px solid #ffffffac;
   border-radius: 20px;
   padding: 8px 15px;
   font-size: 0.9rem;
@@ -111,8 +109,7 @@
   text-transform: uppercase;
 }
 .add-to-cart:hover {
-  color: #000000;
-  background-color: #ffffff;
+  background-color: #ffffff20;
   transition: 0.7s;
   cursor: pointer;
 }

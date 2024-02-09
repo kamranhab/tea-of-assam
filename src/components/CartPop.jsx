@@ -73,7 +73,7 @@ function CartPop({
             onClick={() =>
               itemCount > 0
                 ? navigate("/checkout")
-                : toast.warning("Your cart is empty!", { duration: 1000 })
+                : toast.warning("Your cart is empty!", { duration: 1000 } )
             }
             className="buy"
           >

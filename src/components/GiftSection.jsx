@@ -1,7 +1,8 @@
 import "../styles/giftsection.css";
-import GiftProducts from "../data/GiftProducts";
+import GiftProducts from "../data/GiftProducts.jsx";
 import { useState } from "react";
-import { Toaster, toast } from "sonner"; 
+import { toast } from "sonner"; 
+import { Link } from "react-router-dom";
 
 
 function GiftSection({ giftAddToCart }) {
@@ -10,7 +11,7 @@ function GiftSection({ giftAddToCart }) {
 
   const [items, setItems] = useState(GiftProducts);
 
-  return (
+  return ( 
     <div className="gift-main-container">
       <div className="gift-container">
         <div className="gift-info">
@@ -24,9 +25,13 @@ function GiftSection({ giftAddToCart }) {
         <div className="gift-products">
           {items.map((item) => (
             <div key={item.id} className="gift-product">
+              <Link to={`/products/${item.slug}`} state={{ items: item }}>
               <img src={item.image} alt="gift-image" className="gift-image" />
+              </Link>
               <div className="gift-details">
+              <Link to={`/products/${item.slug}`} state={{ items: item }}>
                 <h2 className="gift-name">{item.name}</h2>
+                </Link>
                 <h3 className="gift-size">{item.size}</h3>
                 <h3 className="gift-price">{item.price}</h3>
 

@@ -18,7 +18,7 @@
   background-color: #000;
   background-image: radial-gradient(
       at 50% 50%,
-      hsla(162, 77%, 40%, 0.173) 0,
+      hsla(162, 100%, 18%, 0.173) 0,
       transparent 50%
     ),
     radial-gradient(at 82% 65%, hsl(218, 39%, 11%) 0, transparent 50%);
@@ -69,15 +69,15 @@
   padding: 20px 0;
   margin: 10px;
   box-shadow: 5px 5px 30px 2px rgba(0, 0, 0, 0.086);
-  background-color: #1010108a;
+  background-color: #0e0e0e66;
   border: 1px solid #ffffff1a;
   border-radius: 8px;
 }
 
 .popup-product-card:hover{
   box-shadow: 5px 5px 30px 2px rgba(0, 0, 0, 0.086);
-  background-color: #00000086;
-  transition: 0.8s;
+  background-color: #1b1b1b61;
+  transition: 0.5s;
 }
 
 .card-top {
@@ -95,7 +95,8 @@
   justify-content: space-between;
   font-size: 1.4rem;
   width: 55%;
-  border: 1px solid #ffffffa5;
+  background-color: #ffffff16;
+  border: 1px solid #ffffff1a;
   border-radius: 15px;
 }
 .popup-counter > p {
@@ -119,8 +120,8 @@
 .popup-counter > button {
   padding: 0.3rem 0.9rem;
   border-style: none;
-  border-radius: 5px;
-  color: #f0f0f0;
+  border-radius: 5px; 
+  color: #dcdcdc;
   cursor: pointer;
   background-color: transparent;
 }
@@ -130,7 +131,7 @@
   justify-content: space-between;
   width: 100%;
   padding: 10px 32px 0 32px;
-  color: #d4d4d4;
+  color: #c4c4c4;
 }
 .price-delete > img {
   width: 20px;
@@ -146,7 +147,7 @@
   justify-content: space-around;
   align-items: center;
   height: 20%;
-  color: #fff;
+  color: #bcbcbc;
   border-top: 1px solid #ffffff2b;
   font-size: 1rem;
   background-color: #000;
@@ -165,9 +166,9 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 800;
-  color: #000;
-  background-color: #fff;
-  border: none;
+  color: #d4d4d4;
+  background-color: #ffffff16;
+  border: 1px solid #ffffff1a;
   border-radius: 10px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   /* transition: all 0.3s ease 0s; */
@@ -175,10 +176,11 @@
   outline: none;
 }
 
-/* .buy:hover {
-    box-shadow: 0px 15px 20px rgba(126, 126, 126, 0.4);
-    transform: translateY(-7px);
-  } */
+.buy:hover {
+    /* box-shadow: 0px 10px 20px rgba(126, 126, 126, 0.181); */
+    background-color: #ffffff20;
+
+  }
 
 /* .buy:active {
     transform: translateY(-1px);

@@ -20,25 +20,26 @@ function Header({ cartCount, setCartVisible }) {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/all-products">Products</Link>
+            <Link to="/all-products">Shop Now</Link>
           </li>
           <li>
-            <Link to="/wholesale">Wholesale</Link>
+            <Link to="/contact">Contact</Link>
           </li>
           <li className="pages">
             Company <img className="dd" src={dropdown} alt="dropdown icon" />
             <ul className="dropdown-content">
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/about">About TOA</Link>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link to="/wholesale">Wholesale</Link>
               </li>
               <li>
-                <Link to="/policies">Terms and Policies</Link>
-              </li>
-              <li>
+                
                 <Link to="/faqs">FAQs</Link>
+              </li>
+              <li>
+              <Link to="/policies">Policies</Link>
               </li>
             </ul>
           </li>
@@ -46,7 +47,7 @@ function Header({ cartCount, setCartVisible }) {
         
         <div className="head-icons-container">
         <Search />
-          <img src={accountIcon} alt="" className="account-icon head-icons" />
+        <Link to="/account">  <img src={accountIcon} alt="account-icon" className="account-icon head-icons" /> </Link>
           <span
             className="cart-icon-container"
             

@@ -53,7 +53,9 @@ function Checkout() {
     if (!custName.trim()) {
       setcustNameValid(false);
       isValid = false;
-      toast.error("Invalid Name ")
+      toast.error("Invalid Name ", {
+  position: 'bottom-center',
+})
     } else {
       setcustNameValid(true);
     }
@@ -61,7 +63,9 @@ function Checkout() {
     if (!email.trim() || !email.includes("@")) {
       setEmailValid(false);
       isValid = false;
-      toast.error("Invalid Email")
+      toast.error("Invalid Email", {
+  position: 'bottom-center',
+})
     } else {
       setEmailValid(true);
     }
@@ -69,7 +73,9 @@ function Checkout() {
     if (!streetAddress.trim()) {
       setStreetAddressValid(false);
       isValid = false;
-      toast.error("Invalid Address")
+      toast.error("Invalid Address", {
+  position: 'bottom-center',
+})
     } else {
       setStreetAddressValid(true);
     }
@@ -77,7 +83,9 @@ function Checkout() {
     if (!city.trim()) {
       setCityValid(false);
       isValid = false;
-      toast.error("Invalid City")
+      toast.error("Invalid City", {
+  position: 'bottom-center',
+})
     } else {
       setCityValid(true);
     }
@@ -85,7 +93,9 @@ function Checkout() {
     if (!zip.trim() || !/^\d{5}(-\d{4})?$/.test(zip)) {
       setZipValid(false);
       isValid = false;
-      toast.error("Invalid ZipCode")
+      toast.error("Invalid ZipCode", {
+  position: 'bottom-center',
+})
     } else {
       setZipValid(true);
     }
@@ -93,7 +103,9 @@ function Checkout() {
     if (!selectedState) {
       setSelectedStateValid(false);
       isValid = false;
-      toast.error("Invalid State")
+      toast.error("Invalid State", {
+  position: 'bottom-center',
+})
     } else {
       setSelectedStateValid(true);
     }
@@ -101,7 +113,9 @@ function Checkout() {
     if (!mobile.trim() || !/^\d+$/.test(mobile)) {
       setMobileValid(false);
       isValid = false;
-      toast.error("Invalid Mobile Number")
+      toast.error("Invalid Mobile Number", {
+  position: 'bottom-center',
+})
     } else {
       setMobileValid(true);
     }

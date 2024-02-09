@@ -6,7 +6,7 @@ function HeroSection(){
       <div className="hero-container">
          <h1 className='hero-heading'>Assam's Finest Tea</h1>
          <p className='hero-subtitle'>A Sip of Authenticity, Directly from the Tea Gardens to Your Cup</p>
-         <Link to="/all-products"><button className="shop-now">Shop Now</button></Link>
+         <Link to="/all-products"><button className="shop-now">Explore</button></Link>
       </div>
     )
 }

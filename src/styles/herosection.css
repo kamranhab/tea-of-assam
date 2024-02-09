@@ -1,58 +1,56 @@
-.hero-container{
-    min-height: 85vh;
-    display: flex;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.hero-container {
+  min-height: 85vh;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.hero-heading{
-    color: #c3c3c3;
-    font-weight: 700;
-    font-size: 2.3rem;
-    
+.hero-heading {
+  color: #c3c3c3;
+  font-weight: 700;
+  font-size: 2.3rem;
 }
 
-.hero-subtitle{
-    color: #cbcbcb;
-    font-weight: 500;
-    font-size: 1.3rem;
-    margin-top: 1.5vh;
-    margin-bottom: 5vh;
+.hero-subtitle {
+  color: #cbcbcb;
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin-top: 1.5vh;
+  margin-bottom: 5vh;
 }
 
-.shop-now{
-    color: #e1e1e1;
-    backdrop-filter: blur(5px) saturate(120%);
-    -webkit-backdrop-filter: blur(10px) saturate(120%);
-    background-color: #ffffff00;
-    border: 1px solid rgba(209, 213, 219, 0.3);
-    padding: 12px 20px;
-    border-radius: 40px;
-    font-size: 1rem;
-    cursor: pointer;
+.shop-now {
+  color: #e1e1e1;
+  backdrop-filter: blur(5px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  background-color: #e7e7e70e;
+  border: 1px solid #ffffff1a;
+
+  padding: 12px 20px;
+  border-radius: 40px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 625px) {
-    .hero-container{
-        width: 80%;
-        align-items: center;
-    }
-    .hero-heading{
-        font-weight: 500;
-        font-size: 1.5rem;
-        
-    }
-    
-    .hero-subtitle{
-        
-        font-weight: 300;
-        font-size: 0.8rem;
-        margin-top: 1vh;
-        margin-bottom: 4vh;
-    }
-    .shop-now{
-        font-size:0.8rem;
-    }
+  .hero-container {
+    width: 80%;
+    align-items: center;
+  }
+  .hero-heading {
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-weight: 300;
+    font-size: 0.8rem;
+    margin-top: 1vh;
+    margin-bottom: 4vh;
+  }
+  .shop-now {
+    font-size: 0.8rem;
+  }
 }
