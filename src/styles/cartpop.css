@@ -133,12 +133,13 @@
   padding: 10px 32px 0 32px;
   color: #c4c4c4;
 }
-.price-delete > img {
+
+.price-delete img {
   width: 20px;
   height: 20px;
   cursor: pointer;
 }
-.price-delete > p {
+.price-delete p {
   font-size: 1rem;
 }
 .popup-bottom {

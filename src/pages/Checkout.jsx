@@ -132,7 +132,7 @@ function Checkout() {
     if (validateForm()) {
       console.log(
         custName,
-        email,
+        email, 
         streetAddress,
         city,
         zip,

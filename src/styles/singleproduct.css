@@ -25,8 +25,8 @@
   border-radius: 15px;
   background-color: #0096691b;
   border: 1px solid #c0c0c054;
-  height: 350px;
-  width: 350px;
+  height: 400px;
+  width: 400px;
 }
 
 .sp-details {
@@ -91,14 +91,19 @@
   margin-top: 20px;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #ffffffac;
-  width: 160px;
+  border: 1px solid #dededeac;
+  width: 105px;
   padding: 6px 10px;
   border-radius: 20px;
 }
 .sp-counter > p {
   font-size: 1rem;
   color: #fff;
+}
+
+.quantity-text{
+ color: #fff;
+ font-size: 1.2rem;
 }
 
 .sp-counter > button {

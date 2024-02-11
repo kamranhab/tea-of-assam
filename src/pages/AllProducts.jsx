@@ -7,7 +7,8 @@ import Footer from "../components/Footer.jsx";
 import CartPop from "../components/CartPop.jsx";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
-import addToCartImg from "../assets/cartadd2.svg"
+import addToCartImg from "../assets/cart-product.svg"
+import wishlistImg from "../assets/heart2.svg"
 
 function AllProducts() {
   const [cartItems, setCartItems] = useState(() => {
@@ -39,6 +40,28 @@ function AllProducts() {
     }
   };
 
+
+  const [wishItems, setWishItems] = useState(() => {
+    const savedWishItems = localStorage.getItem('wishItems');
+    return savedWishItems ? JSON.parse(savedWishItems) : [];
+  });
+  
+  useEffect(() => {
+    localStorage.setItem('wishItems', JSON.stringify(wishItems));
+  }, [wishItems]);
+
+
+  const addToWish = (product) => {
+    const existingWishProduct = wishItems.find(elem => elem.id === product.id);
+    if (existingWishProduct) {
+      setWishItems(wishItems.map(elem => 
+        elem.id === product.id ? { ...elem, wishQuantity: elem.wishQuantity + 1 } : elem
+      ));
+    } else {
+      setWishItems([...wishItems, { ...product, wishQuantity: 1 }]);
+    }
+  };
+
   const onDelete = (index) => {
     setCartItems((currentItems) =>
       currentItems.filter((_, idx) => idx !== index)
@@ -60,6 +83,7 @@ function AllProducts() {
       {cartVisible && (
         <CartPop
           cartItems={cartItems}
+          wishItems={wishItems}
           setCartVisible={setCartVisible}
           onUpdateQuantity={onUpdateQuantity}
           onDelete={onDelete}
@@ -67,11 +91,12 @@ function AllProducts() {
       )}
       <Header
         cartCount={cartItems.length}
+        wishCount={wishItems.length}
         setCartVisible={setCartVisible}
        
       />
        
-      <div className="all-products-600px">
+      <div className="all-products-container">
         <div className="all-products">
           {items.map((item) => (
             <div key={item.id} className="all-product">
@@ -90,15 +115,26 @@ function AllProducts() {
                 </h3>
                 <p className="all-product-size">{item.size}</p>
                 <p className="all-product-price">{item.price}</p>
+                <div>
+                <button
+                  className="all-padd-to-cart"
+                  onClick={() => {
+                    addToWish(item);
+                    toast.success("Added to Wishlist", { duration: 1000 });
+                  }}
+                >
+                  <img src={wishlistImg} /> 
+                </button>
                 <button
                   className="all-padd-to-cart"
                   onClick={() => {
                     addToCart(item);
-                    toast.success('Added to Cart',  { duration: 1000 } );
+                    toast.success("Added to Cart", { duration: 1000 });
                   }}
                 >
-                  <img src={addToCartImg}/>
+                  <img src={addToCartImg} />
                 </button>
+              </div>
           
               </div>
             </div> 

@@ -3,7 +3,7 @@ import '../styles/featuredsection.css'
 import FeaturedProduct from './FeaturedProduct.jsx'
 
 
-function FeaturedSection({ addToCart }) {
+function FeaturedSection({ addToCart, addToWish}) {
   return (
     <div className='featured-container'>
       <div className="featured-heading">
@@ -12,7 +12,7 @@ function FeaturedSection({ addToCart }) {
         <p className="f-show-more">View All </p>
         </Link>
       </div>
-      <FeaturedProduct addToCart={addToCart} />
+      <FeaturedProduct addToCart={addToCart} addToWish = {addToWish}/>
     </div>
   );
 }

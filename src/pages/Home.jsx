@@ -6,12 +6,19 @@ import HeroSection from '../components/HeroSection.jsx';
 import bg from '../assets/bg2.mp4';
 import CartPop from '../components/CartPop.jsx';
 import BottomBar from '../components/BottomBar.jsx';
-import "../styles/home.css"; 
+import "../styles/home.css";  
 import Footer from '../components/Footer.jsx';
 import '../styles/home.css'
 
 
 function Home() {
+
+
+
+const [cartVisible, setCartVisible] = useState(false);
+
+// cart array
+
   const [cartItems, setCartItems] = useState(() => {
     const savedCartItems = localStorage.getItem('cartItems');
     return savedCartItems ? JSON.parse(savedCartItems) : [];
@@ -20,8 +27,6 @@ function Home() {
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
-
-  const [cartVisible, setCartVisible] = useState(false);
 
 
   const addToCart = (product) => {
@@ -35,6 +40,7 @@ function Home() {
     }
   };
 
+
   const giftAddToCart = (product) => {
     const existingGiftProduct = cartItems.find(elem => elem.id === product.id);
     if (existingGiftProduct) {
@@ -45,6 +51,35 @@ function Home() {
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
     }
   };
+
+
+// wishlist array
+
+  const [wishItems, setWishItems] = useState(() => {
+    const savedWishItems = localStorage.getItem('wishItems');
+    return savedWishItems ? JSON.parse(savedWishItems) : [];
+  });
+  
+  useEffect(() => {
+    localStorage.setItem('wishItems', JSON.stringify(wishItems));
+  }, [wishItems]);
+
+
+
+
+  const addToWish = (product) => {
+    const existingWishProduct = wishItems.find(elem => elem.id === product.id);
+    if (existingWishProduct) {
+      setWishItems(wishItems.map(elem => 
+        elem.id === product.id ? { ...elem, wishQuantity: elem.wishQuantity + 1 } : elem
+      ));
+    } else {
+      setWishItems([...wishItems, { ...product, wishQuantity: 1 }]);
+    }
+  };
+
+  // wishlist array end
+
 
   const onDelete = (index) => {
     setCartItems(currentItems => currentItems.filter((_, idx) => idx !== index));
@@ -66,11 +101,11 @@ function Home() {
           <source src={bg} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <Header  cartCount={cartItems.length} setCartVisible={setCartVisible}  /> 
+        <Header  cartCount={cartItems.length} wishCount={wishItems.length} setCartVisible={setCartVisible}  /> 
         <HeroSection />
         </div>
         
-        <FeaturedSection addToCart={addToCart} />
+        <FeaturedSection addToCart={addToCart} addToWish={addToWish}/>
         <GiftSection giftAddToCart={giftAddToCart} />
    
         <Footer />

@@ -1,13 +1,13 @@
 import "../styles/header.css";
 import headerLogo from "../assets/headerlogo.png";
-
+import wishlistIcon from "../assets/wishlist.svg";
 import accountIcon from "../assets/account.svg";
 import dropdown from "../assets/dd.svg";
-import cartIcon from "../assets/cart.svg";
+import cartIcon from "../assets/cart2.svg";
 import { Link } from "react-router-dom";
 import Search from "./Search.jsx";
 
-function Header({ cartCount, setCartVisible }) {
+function Header({ cartCount, wishCount, setCartVisible }) {
 
   return (
     <div className="header-container">
@@ -48,10 +48,16 @@ function Header({ cartCount, setCartVisible }) {
         <div className="head-icons-container">
         <Search />
         <Link to="/account">  <img src={accountIcon} alt="account-icon" className="account-icon head-icons" /> </Link>
+       
+          
+        <span
+            className="wishlist-icon-container">
+            <Link  to="/wishlist">  <img src={wishlistIcon} alt="wishlist-icon" className="wishlist-icon head-icons" /> </Link>
+            {wishCount > 0 && <span className="wishlist-counter">{wishCount}</span>}
+          </span>
+          
           <span
-            className="cart-icon-container"
-            
-          >
+            className="cart-icon-container">
             <img onClick={() => setCartVisible((preview) => !preview)} src={cartIcon} alt="" className="cart-icon head-icons" />
             {cartCount > 0 && <span className="cart-counter">{cartCount}</span>}
           </span>

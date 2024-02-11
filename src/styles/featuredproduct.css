@@ -14,7 +14,7 @@
   transition: 0.5s;
 }
 
-.featured-products {
+.featured-products { 
   margin: 3vh 0;
   width: 80%;
   display: grid;
@@ -76,12 +76,13 @@
   background-color: #ffffff0f;
   border: 1px solid #ffffff1a;
   border-radius: 10px;
-  width:50%;
-  padding: 0 40px;
+  width:40%;
+  margin-right: 10px;
 }
 
 .padd-to-cart > img {
   width:30px;
+  
 }
 
 .padd-to-cart:hover {

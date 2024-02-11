@@ -1,6 +1,5 @@
 .footer-main {
   width: 100%;
- 
 }
 .footer-elements {
   list-style-type: none;
@@ -14,8 +13,8 @@
   color: #c0c0c0;
   background-color: #000000;
 }
-.footer-elements li{
- padding: 2px 10px;
+.footer-elements li {
+  padding: 2px 10px;
   backdrop-filter: blur(16px) saturate(120%);
   -webkit-backdrop-filter: blur(10px) saturate(120%);
   background-color: #0045092d;

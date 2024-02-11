@@ -10,6 +10,8 @@ import SingleProduct from "./pages/SingleProduct.jsx";
 import { Route, Routes } from "react-router-dom";
 import Faq from "./pages/Faq.jsx";
 import { Toaster } from "sonner";
+import UnderConstruction from "./pages/UnderConstruction.jsx";
+import Wishlist from "./pages/Wishlist.jsx";
 
 function App() {
   return (
@@ -20,11 +22,13 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/all-products" element={<AllProducts />} />
         <Route path="/products/:id" element={<SingleProduct />} />
+        <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/account" element={<Account />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/policies" element={<Policies />} />
         <Route path="/wholesale" element={<Wholesale />} />
+        <Route path="/underconstruction" element={<UnderConstruction />} />
         <Route path="/faqs" element={<Faq />} />
       </Routes>
     </>

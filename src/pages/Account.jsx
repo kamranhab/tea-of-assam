@@ -4,7 +4,7 @@ import PagesHeader from "../components/PagesHeader.jsx";
 import Footer from "../components/Footer.jsx";
 import BottomBar from "../components/BottomBar.jsx";
 
-function Contact() {
+function Account() {
   const [animationKey, setAnimationKey] = useState(0);
   const [custName, setcustName] = useState("");
   const [custPassword, setCustPassword] = useState("");
@@ -114,4 +114,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Account;

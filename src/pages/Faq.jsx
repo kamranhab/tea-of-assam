@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PagesHeader from "../components/PagesHeader.jsx";
 import Footer from "../components/Footer.jsx";
 import BottomBar from "../components/BottomBar.jsx";

@@ -15,12 +15,6 @@ function CartPop({
   const navigate = useNavigate();
   const [chLink, setChLink] = useState("");
 
-  const checkCart = () => {
-    if (itemCount == 0) {
-      setChLink("");
-    } else setChLink("/checkout");
-  };
-
   useEffect(() => {
     function handleClickOutside(event) {
       if (popupRef.current && !popupRef.current.contains(event.target)) {

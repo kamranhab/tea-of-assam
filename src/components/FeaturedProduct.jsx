@@ -4,9 +4,10 @@ import Products from "../data/Products.jsx";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import rightbutton from "../assets/right.png";
-import addToCartImg from "../assets/cartadd2.svg"
+import addToCartImg from "../assets/cart-product.svg";
+import wishlistImg from "../assets/heart.svg";
 
-function FeaturedProduct({ addToCart }) {
+function FeaturedProduct({ addToCart , addToWish }) {
   const [items, setItems] = useState(Products);
   const [currentPage, setCurrentPage] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -49,23 +50,33 @@ function FeaturedProduct({ addToCart }) {
               </h3>
               <p className="product-size">{item.size}</p>
               <p className="product-price">{item.price}</p>
-              <button
-                className="padd-to-cart"
-                onClick={() => {
-                  addToCart(item);
-                  toast.success('Added to Cart',  { duration: 1000 } );
-                }}
-              >
-                <img src={addToCartImg}/>
-              </button>
-              
+              <div>
+                <button
+                  className="padd-to-cart"
+                  onClick={() => {
+                    addToWish(item);
+                    toast.success("Added to Wishlist", { duration: 1000 });
+                  }}
+                >
+                  <img src={wishlistImg} />
+                </button>
+                <button
+                  className="padd-to-cart"
+                  onClick={() => {
+                    addToCart(item);
+                    toast.success("Added to Cart", { duration: 1000 });
+                  }}
+                >
+                  <img src={addToCartImg} />
+                </button>
+              </div>
             </div>
           </div>
         ))}
       </div>
       {windowWidth < 600 && totalPages > 1 && (
         <div className="pagination">
-          <img src={rightbutton} onClick={paginate}/>
+          <img src={rightbutton} onClick={paginate} />
         </div>
       )}
     </div>

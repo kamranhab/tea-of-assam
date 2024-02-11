@@ -10,7 +10,7 @@ import { useLocation } from "react-router-dom";
 function SingleProduct() {
   const location = useLocation();
   const items = location.state.items;
-  const [itemQuantity,setItemQuantity] = useState(1);
+  const [itemQuantity, setItemQuantity] = useState(1);
   const [cartItems, setCartItems] = useState(() => {
     const savedCartItems = localStorage.getItem("cartItems");
     return savedCartItems ? JSON.parse(savedCartItems) : [];
@@ -36,6 +36,28 @@ function SingleProduct() {
     }
   };
 
+
+  const [wishItems, setWishItems] = useState(() => {
+    const savedWishItems = localStorage.getItem('wishItems');
+    return savedWishItems ? JSON.parse(savedWishItems) : [];
+  });
+  
+  useEffect(() => {
+    localStorage.setItem('wishItems', JSON.stringify(wishItems));
+  }, [wishItems]);
+
+
+  const addToWish = (product) => {
+    const existingWishProduct = wishItems.find(elem => elem.id === product.id);
+    if (existingWishProduct) {
+      setWishItems(wishItems.map(elem => 
+        elem.id === product.id ? { ...elem, wishQuantity: elem.wishQuantity + 1 } : elem
+      ));
+    } else {
+      setWishItems([...wishItems, { ...product, wishQuantity: 1 }]);
+    }
+  };
+
   const onDelete = (index) => {
     setCartItems((currentItems) =>
       currentItems.filter((_, idx) => idx !== index)
@@ -52,14 +74,13 @@ function SingleProduct() {
     );
   };
 
-  const minusItem =()=>{
-    if(itemQuantity>1)
-    setItemQuantity(itemQuantity-1);
-  }
+  const minusItem = () => {
+    if (itemQuantity > 1) setItemQuantity(itemQuantity - 1);
+  };
 
-  const plusItem =()=>{
-    setItemQuantity(itemQuantity+1);
-  }
+  const plusItem = () => {
+    setItemQuantity(itemQuantity + 1);
+  };
   return (
     <>
       {cartVisible && (
@@ -70,18 +91,19 @@ function SingleProduct() {
           onDelete={onDelete}
         />
       )}
-      <Header cartCount={cartItems.length} setCartVisible={setCartVisible} />
+      <Header cartCount={cartItems.length} wishCount={wishItems.length} setCartVisible={setCartVisible} />
 
       <div className="single-product-container">
         <div className="sp-container">
           <div className="sp-img-container">
-            <img src={items.image} className="sp-img"/> 
+            <img src={items.image} className="sp-img" />
           </div>
           <div className="sp-details">
             <h3 className="sp-name">{items.name}</h3>
             <p className="sp-size">{items.size}</p>
             <p className="sp-price">{items.price}</p>
             <div className="sp-desc">{items.desc}</div>
+            <div className="quantity-text">Quantity:</div> 
             <div className="sp-counter">
               <button onClick={minusItem}>-</button>
               <p>{itemQuantity}</p>
@@ -95,6 +117,15 @@ function SingleProduct() {
               }}
             >
               Add to Cart
+            </button>
+            <button
+              className="sp-add-to-cart"
+              onClick={() => {
+                addToWish(items);
+                toast.success("Added to Wishlist", { duration: 1000 });
+              }}
+            >
+              Add to Wishlist
             </button>
           </div>
         </div>
