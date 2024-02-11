@@ -1,5 +1,5 @@
 import "../styles/cartpop.css"
-import deleteImg from '../assets/delete.svg'
+import deleteImg from '../assets/cartminus.svg'
 
 function CartProduct({ item, index, onUpdateQuantity, onDelete }) {
     const { image, name, price, size, quantity } = item;
