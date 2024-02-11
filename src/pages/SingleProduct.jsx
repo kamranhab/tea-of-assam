@@ -4,14 +4,13 @@ import BottomBar from "../components/BottomBar.jsx";
 import Header from "../components/Header.jsx";
 import CartPop from "../components/CartPop.jsx";
 import { toast } from "sonner";
-
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 function SingleProduct() {
   const location = useLocation();
   const items = location.state.items;
-
+  const [itemQuantity,setItemQuantity] = useState(1);
   const [cartItems, setCartItems] = useState(() => {
     const savedCartItems = localStorage.getItem("cartItems");
     return savedCartItems ? JSON.parse(savedCartItems) : [];
@@ -28,12 +27,12 @@ function SingleProduct() {
       setCartItems(
         cartItems.map((elem) =>
           elem.id === product.id
-            ? { ...elem, quantity: elem.quantity + 1 }
+            ? { ...elem, quantity: elem.quantity + itemQuantity }
             : elem
         )
       );
     } else {
-      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+      setCartItems([...cartItems, { ...product, quantity: itemQuantity }]);
     }
   };
 
@@ -52,6 +51,15 @@ function SingleProduct() {
       )
     );
   };
+
+  const minusItem =()=>{
+    if(itemQuantity>1)
+    setItemQuantity(itemQuantity-1);
+  }
+
+  const plusItem =()=>{
+    setItemQuantity(itemQuantity+1);
+  }
   return (
     <>
       {cartVisible && (
@@ -74,11 +82,11 @@ function SingleProduct() {
             <p className="sp-size">{items.size}</p>
             <p className="sp-price">{items.price}</p>
             <div className="sp-desc">{items.desc}</div>
-            {/* <div className="sp-counter">
-              <button>-</button>
-              <p>1</p>
-              <button>+</button>
-            </div> */}
+            <div className="sp-counter">
+              <button onClick={minusItem}>-</button>
+              <p>{itemQuantity}</p>
+              <button onClick={plusItem}>+</button>
+            </div>
             <button
               className="sp-add-to-cart"
               onClick={() => {

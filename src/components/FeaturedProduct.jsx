@@ -4,6 +4,7 @@ import Products from "../data/Products.jsx";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import rightbutton from "../assets/right.png";
+import addToCartImg from "../assets/cartadd2.svg"
 
 function FeaturedProduct({ addToCart }) {
   const [items, setItems] = useState(Products);
@@ -55,7 +56,7 @@ function FeaturedProduct({ addToCart }) {
                   toast.success('Added to Cart',  { duration: 1000 } );
                 }}
               >
-                Add to Cart
+                <img src={addToCartImg}/>
               </button>
               
             </div>

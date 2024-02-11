@@ -7,6 +7,7 @@ import Footer from "../components/Footer.jsx";
 import CartPop from "../components/CartPop.jsx";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import addToCartImg from "../assets/cartadd2.svg"
 
 function AllProducts() {
   const [cartItems, setCartItems] = useState(() => {
@@ -96,7 +97,7 @@ function AllProducts() {
                     toast.success('Added to Cart',  { duration: 1000 } );
                   }}
                 >
-                  Add to Cart
+                  <img src={addToCartImg}/>
                 </button>
           
               </div>

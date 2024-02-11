@@ -1,56 +1,87 @@
-.bottom-container{
-  z-index:1000;
+.bottom-container {
+  z-index: 1000;
 }
 
 .bsearch,
-.baccount,.bham,.bhome{
+.baccount,
+.bham,
+.bhome {
   width: 20px;
 }
-.bbar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+.bbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
-.bicons-container{
-    display: flex;
-    width: 100%;
-    justify-content:center;
-    gap:18vw;
-    align-items: center;
-
+.bicons-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 22vw;
+  align-items: center;
 }
-.dropup-menu{
-        position: absolute;
-        bottom: 100%;
-        width: 1000px;
-        z-index: 10000;
-        background-color: #927b5b;
-        list-style: none;
-        padding: 10px;
+.dropup-menu {
+  position: absolute;
+  bottom: 100%;
+  right: -33px;
+  z-index: 10000;
+  background-image: radial-gradient(
+      at 50% 50%,
+      hsla(162, 77%, 40%, 0.267) 0,
+      transparent 50px
+    ),
+    radial-gradient(at 82% 65%, hsl(0, 0%, 0%) 0, transparent 100%);
 
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.059);
+  min-width: 160px;
+  overflow: hidden;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.dropup-menu li {
+  width: 80%;
+  list-style: none;
+  display: flex;
+}
+.dropup-menu a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 0.7rem;
+  color: rgb(221, 221, 221);
+  padding: 12px 16px;
+  backdrop-filter: blur(50px) saturate(20%);
+  -webkit-backdrop-filter: blur(50px) saturate(20%);
+  border: 1px solid rgba(255, 255, 255, 0.059);
 }
 
-.bhamburg>ul {
+.dropup-menu li:nth-child(1) a {
+  border-radius: 8px 8px 0 0;
+}
+
+.bhamburg > ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
-
 }
-
 
 .bottom-container {
   display: none;
-  height:6vh;
+  height: 12vw;
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #927b5b; 
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
-@media only screen and (max-width:800px){
-    .bottom-container{
-        display: flex;
-    }
+@media only screen and (max-width: 890px) {
+  .bottom-container {
+    display: flex;
+  }
 }
