@@ -8,7 +8,7 @@ import CartPop from "../components/CartPop.jsx";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import addToCartImg from "../assets/cart-product.svg"
-import wishlistImg from "../assets/heart2.svg"
+import wishlistImg from "../assets/heart.svg"
 
 function AllProducts() {
   const [cartItems, setCartItems] = useState(() => {
@@ -117,7 +117,7 @@ function AllProducts() {
                 <p className="all-product-price">{item.price}</p>
                 <div>
                 <button
-                  className="all-padd-to-cart"
+                  className="all-padd-to-wish"
                   onClick={() => {
                     addToWish(item);
                     toast.success("Added to Wishlist", { duration: 1000 });

@@ -52,7 +52,7 @@ function FeaturedProduct({ addToCart , addToWish }) {
               <p className="product-price">{item.price}</p>
               <div>
                 <button
-                  className="padd-to-cart"
+                  className="padd-to-wish"
                   onClick={() => {
                     addToWish(item);
                     toast.success("Added to Wishlist", { duration: 1000 });

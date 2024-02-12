@@ -75,19 +75,33 @@
   font-size: 1rem;
 }
 
-.wish-padd-to-cart {
+.wish-padd-to-cart, .wish-removed {
+  all:unset;
+  text-align: center;
   background-color: #ffffff0f;
-  border: 1px solid #ffffff1a;
-  border-radius: 10px;
-  width: 40%;
-  margin-right: 10px;
+  border-right: 1px solid #ffffff1a;
+  border-bottom: 1px solid #ffffff1a;
+  width:40%;
+  
 }
-.wish-padd-to-cart > img {
-  width: 30px;
+
+.wish-padd-to-cart{
+  border-radius: 0 20px 20px 0;
 }
-.wish-padd-to-cart:hover {
+
+.wish-removed{
+  border-radius: 20px 0 0 20px;
+  margin-right: 3px;
+}
+
+.wish-padd-to-cart img, .wish-removed img {
+  width:30px;
+  
+}
+
+.wish-padd-to-cart:hover, .wish-removed:hover {
   background-color: #ffffff20;
-  transition: 0.7s;
+  transition: 0.5s;
   cursor: pointer;
 }
 

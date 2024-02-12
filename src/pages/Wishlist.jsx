@@ -108,7 +108,7 @@ function Wishlist() {
                   <p className="wish-product-price">{item.price}</p>
                   <div>
                     <button
-                      className="wish-padd-to-cart"
+                      className="wish-removed"
                       onClick={() => {
                         onDeleteWish(index);
                         toast.warning("Removed from Wishlist", {
