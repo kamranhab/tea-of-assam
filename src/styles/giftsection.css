@@ -5,15 +5,27 @@
 }
 .gift-container {
   width: 80%;
-  background: url("../assets/giftbg.jpg");
-  background-size: cover;
-  background-position: center;
   margin: 40px;
   padding: 50px 30px;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+
+.gift-bg-image{
+  position: absolute;
+  z-index: -1;
+  top:0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/herobg.webp');
+  background-size: cover;
+  background-position: center;
+  filter:brightness(50%) blur(2px);
+  
 }
 
 .gift-info {

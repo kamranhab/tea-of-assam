@@ -9,14 +9,13 @@
   flex-direction: column;
 }
 .hero-background-image{
-  display: none;
   position: absolute;
   width: 100vw;
   height: 100%;
-  background-image: url('../assets/herobg2.jpg');
-  background-size: cover;
+  background-image: url('../assets/herobg2.webp');
+  background-size:cover;
   background-position: center;
-  filter:brightness(60%) contrast(100%) blur(3px);
+  filter:brightness(50%) contrast(100%) blur(2px);
   z-index: -1; 
 }
 
@@ -49,9 +48,10 @@
 }
 
 @media only screen and (max-width: 890px) {
-.hero-background-image{
-  display: block;
-}
+ .hero-background-image{
+  top:110px;
+
+ }
 }
 
 @media only screen and (max-width: 625px) {

@@ -97,10 +97,10 @@ const [cartVisible, setCartVisible] = useState(false);
 
       {cartVisible && <CartPop cartItems={cartItems} setCartVisible={setCartVisible} onUpdateQuantity={onUpdateQuantity} onDelete={onDelete} />}
       <div className="main-container">
-        <video id="video-background" autoPlay muted loop playsinline preload="auto">
+        {/* <video id="video-background" autoPlay muted loop playsinline preload="auto">
           <source src={bg} type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
         <Header  cartCount={cartItems.length} wishCount={wishItems.length} setCartVisible={setCartVisible}  /> 
         <HeroSection />
         </div>

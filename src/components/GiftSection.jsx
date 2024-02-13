@@ -14,6 +14,7 @@ function GiftSection({ giftAddToCart }) {
   return ( 
     <div className="gift-main-container">
       <div className="gift-container">
+        <div className="gift-bg-image"></div>
         <div className="gift-info">
           <h3 className="gift-boxes-text">Gift Boxes</h3>
           <h2 className="gift-heading">

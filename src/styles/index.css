@@ -25,7 +25,7 @@ body{
   flex-direction: column;
 }
 
-#video-background {
+/* #video-background {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -34,7 +34,7 @@ body{
   height: 100%;
   object-fit: cover;
   filter: brightness(50%);
-}
+} */
 
 a {
   color: inherit; 
