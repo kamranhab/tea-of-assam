@@ -194,7 +194,9 @@
   .account-icon {
     display: none;
   }
-
+  .wishlist-icon-container {
+    display: none;
+  }
   .cart-icon {
     width: 1.5rem;
   }

@@ -5,78 +5,82 @@ import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import rightbutton from "../assets/right.png";
 import addToCartImg from "../assets/cart-product.svg";
-import wishlistImg from "../assets/heart.svg";
+import wishlistImg from "../assets/heart2.svg";
 
-function FeaturedProduct({ addToCart , addToWish }) {
+function FeaturedProduct({ addToCart, addToWish }) {
   const [items, setItems] = useState(Products);
   const [currentPage, setCurrentPage] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const itemsPerPage = windowWidth < 600 ? 2 : items.length;
-  const totalPages = Math.ceil(items.length / itemsPerPage);
+  // Filtered products are defined here
+  const filteredProducts = items.filter(product => product.featured === true);
+
+  // Calculate items per page based on window width
+  const itemsPerPage = windowWidth < 891 ? 2 : filteredProducts.length;
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
+    // Cleanup the event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  useEffect(() => {
+    // Reset currentPage if itemsPerPage changes, ensuring correct pagination display
+    setCurrentPage(0);
+  }, [itemsPerPage, filteredProducts.length]);
+
   const paginate = () => {
-    setCurrentPage((prevPage) => (prevPage + 1) % totalPages);
+    setCurrentPage(prevPage => (prevPage + 1) % totalPages);
+  };
+  const paginateMinus = () => {
+    setCurrentPage(prevPage => {
+      if (prevPage - 1 < 0) {
+        return totalPages - 1;
+      } else {
+        return prevPage - 1;
+      }
+    });
   };
 
   const indexOfLastItem = (currentPage + 1) * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const filteredProducts = items.filter((product) => product.featured == true);
-  const currentItems = filteredProducts.slice(
-    indexOfFirstItem,
-    indexOfLastItem
-  );
+  const currentItems = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
     <div className="featured-products-600px">
       <div className="featured-products">
-        {currentItems.map((item) => (
+        {currentItems.map(item => (
           <div key={item.id} className="product">
-            <Link to={`/products/${item.slug}`} state={{ items: item }}>
+            <Link to={`/products/${item.slug}`} state={{ item }}>
               <img className="product-image" src={item.image} alt={item.name} />
             </Link>
             <div className="product-details">
               <h3 className="product-name">
-                <Link to={`/products/${item.slug}`} state={{ items: item }}>
+                <Link to={`/products/${item.slug}`} state={{ item }}>
                   {item.name}
                 </Link>
               </h3>
               <p className="product-size">{item.size}</p>
               <p className="product-price">{item.price}</p>
               <div>
-                <button
-                  className="padd-to-wish"
-                  onClick={() => {
-                    addToWish(item);
-                    toast.success("Added to Wishlist", { duration: 1000 });
-                  }}
-                >
-                  <img src={wishlistImg} />
+                <button className="padd-to-wish" onClick={() => { addToWish(item); toast.success("Added to Wishlist", { duration: 1000 }); }}>
+                  <img src={wishlistImg} alt="Add to Wishlist" />
                 </button>
-                <button
-                  className="padd-to-cart"
-                  onClick={() => {
-                    addToCart(item);
-                    toast.success("Added to Cart", { duration: 1000 });
-                  }}
-                >
-                  <img src={addToCartImg} />
+                <button className="padd-to-cart" onClick={() => { addToCart(item); toast.success("Added to Cart", { duration: 1000 }); }}>
+                  <img src={addToCartImg} alt="Add to Cart" />
                 </button>
               </div>
             </div>
           </div>
         ))}
       </div>
-      {windowWidth < 600 && totalPages > 1 && (
+      {windowWidth < 891 && totalPages > 1 && (
         <div className="pagination">
-          <img src={rightbutton} onClick={paginate} />
+          <img className="prev-page" src={rightbutton} alt="Prev Page" onClick={paginateMinus} />
+          <img className="nextPage" src={rightbutton} alt="Next Page" onClick={paginate} />
         </div>
       )}
     </div>

@@ -109,7 +109,7 @@ const [cartVisible, setCartVisible] = useState(false);
         <GiftSection giftAddToCart={giftAddToCart} />
    
         <Footer />
-        <BottomBar />
+        <BottomBar wishCount={wishItems.length} />
       
     </div>
   );

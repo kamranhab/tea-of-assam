@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 
 function SingleProduct() {
   const location = useLocation();
-  const items = location.state.items;
+  const items = location.state.item;
   const [itemQuantity, setItemQuantity] = useState(1);
   const [cartItems, setCartItems] = useState(() => {
     const savedCartItems = localStorage.getItem("cartItems");
@@ -105,9 +105,9 @@ function SingleProduct() {
             <div className="sp-desc">{items.desc}</div>
             <div className="quantity-text">Quantity:</div> 
             <div className="sp-counter">
-              <button onClick={minusItem}>-</button>
+              <button className="buttonminus" onClick={minusItem}>-</button>
               <p>{itemQuantity}</p>
-              <button onClick={plusItem}>+</button>
+              <button className="buttonplus" onClick={plusItem}>+</button>
             </div>
             <button
               className="sp-add-to-cart"

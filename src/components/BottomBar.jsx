@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "../styles/bottombar.css";
-import bhomeIcon from "../assets/bhome.png";
-import baccountIcon from "../assets/baccount.png";
-import bhamburgIcon from "../assets/bham.png";
+import bhomeIcon from "../assets/home.svg";
+import baccountIcon from "../assets/accountbtm.svg";
+import wishlistIcon from "../assets/heart4.svg";
+import bhamburgIcon from "../assets/ham.svg";
 import { Link } from "react-router-dom";
 
-function BottomBar() {
+function BottomBar({wishCount}) {
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const toggleDropdown = () => {
@@ -20,7 +21,11 @@ function BottomBar() {
             <img src={bhomeIcon} alt="" className="bhome" />
           </Link>
           <Link to="/account"><img src={baccountIcon} alt="" className="baccount" /></Link>
-
+          <span
+            className="bwishlist-icon-container">
+            <Link  to="/wishlist">  <img src={wishlistIcon} alt="wishlist-icon" className="bwishlist-icon head-icons" /> </Link>
+            {wishCount > 0 && <span className="bwishlist-counter">{wishCount}</span>}
+          </span>
           <div className="bhamburg" onClick={toggleDropdown}>
             <img src={bhamburgIcon} alt="" className="bham" />
             {dropdownVisible && (

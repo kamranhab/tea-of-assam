@@ -10,18 +10,18 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   min-height: 85vh;
 }
 
-.wish-product {
-  display: flex;
+.wish-product {display: flex;
   justify-content: space-evenly;
   align-items: center;
+  width: 450px;
   padding: 25px 0;
-  height: 230px;
-  border-radius: 8px;
   background-color: #10101057;
   border: 1px solid #ffffff1a;
+  border-radius: 8px;
 }
 
 .wish-product:hover {
@@ -31,10 +31,10 @@
 }
 
 .wish-products {
+  display:flex;
+  flex-wrap: wrap;
   margin: 5vh 0;
   width: 80%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 1vw;
   margin-top: 15vh;
 }
@@ -81,7 +81,8 @@
   background-color: #ffffff0f;
   border-right: 1px solid #ffffff1a;
   border-bottom: 1px solid #ffffff1a;
-  width:40%;
+  max-width:60px;
+  padding:0 12px;
   
 }
 
@@ -95,8 +96,8 @@
 }
 
 .wish-padd-to-cart img, .wish-removed img {
+  padding: 4px 0 0 0;
   width:30px;
-  
 }
 
 .wish-padd-to-cart:hover, .wish-removed:hover {
@@ -112,35 +113,34 @@
   margin-top: 20vh;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1140px) {
   .wish-products {
-    margin: 2vh 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.8vw;
-    margin-top: 12vh;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .wish-products-container {
     display: flex;
+    flex-wrap:nowrap;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
   }
+
+}
+@media only screen and (max-width: 625px) {
+  }
+  
   .wish-pagination > img {
     border: 1px solid #ffffff1a;
     border-radius: 0 10px 10px 0;
-    padding: 50px 4px;
-  }
-  .wish-products {
-    grid-template-columns: 1fr;
   }
   .wish-product {
-    width: 100%;
+    max-width: 450px;
+    min-width: 200px;
   }
-  .wish-padd-to-cart {
-    width: fit-content;
-    padding: 0 30px;
+  .wish-padd-to-cart,.wish-removed {
+    width:fit-content;
+    padding:3px 30px 0 10px;
   }
-  .wish-padd-to-cart > img {
+  .wish-padd-to-cart>img,.wish-removed>img{
     width: 25px;
-  }
+
 }
+}
+
