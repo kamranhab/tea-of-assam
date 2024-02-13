@@ -16,7 +16,7 @@
   background-image: url('../assets/herobg2.jpg');
   background-size: cover;
   background-position: center;
-  filter:brightness(40%) contrast(100%) blur(0px);
+  filter:brightness(60%) contrast(100%) blur(3px);
   z-index: -1; 
 }
 
