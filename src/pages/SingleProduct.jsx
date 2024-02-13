@@ -9,7 +9,7 @@ import { useLocation } from "react-router-dom";
 
 function SingleProduct() {
   const location = useLocation();
-  const items = location.state.item;
+  const items = location.state.items;
   const [itemQuantity, setItemQuantity] = useState(1);
   const [cartItems, setCartItems] = useState(() => {
     const savedCartItems = localStorage.getItem("cartItems");
@@ -20,6 +20,7 @@ function SingleProduct() {
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
+
 
   const addToCart = (product) => {
     const existingProduct = cartItems.find((elem) => elem.id === product.id);

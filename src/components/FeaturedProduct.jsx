@@ -12,10 +12,8 @@ function FeaturedProduct({ addToCart, addToWish }) {
   const [currentPage, setCurrentPage] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  // Filtered products are defined here
   const filteredProducts = items.filter(product => product.featured === true);
 
-  // Calculate items per page based on window width
   const itemsPerPage = windowWidth < 891 ? 2 : filteredProducts.length;
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
@@ -23,12 +21,10 @@ function FeaturedProduct({ addToCart, addToWish }) {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
 
-    // Cleanup the event listener on component unmount
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
-    // Reset currentPage if itemsPerPage changes, ensuring correct pagination display
     setCurrentPage(0);
   }, [itemsPerPage, filteredProducts.length]);
 
@@ -54,12 +50,12 @@ function FeaturedProduct({ addToCart, addToWish }) {
       <div className="featured-products">
         {currentItems.map(item => (
           <div key={item.id} className="product">
-            <Link to={`/products/${item.slug}`} state={{ item }}>
+            <Link to={`/products/${item.slug}`} state={{items:item }}>
               <img className="product-image" src={item.image} alt={item.name} />
             </Link>
             <div className="product-details">
               <h3 className="product-name">
-                <Link to={`/products/${item.slug}`} state={{ item }}>
+                <Link to={`/products/${item.slug}`} state={{items:item}}>
                   {item.name}
                 </Link>
               </h3>
