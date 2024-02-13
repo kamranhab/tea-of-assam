@@ -26,7 +26,7 @@
   background-color: #0096691b;
   border: 1px solid #c0c0c054;
   height: 400px;
-  width: 400px;
+  max-width: 400px;
 }
 
 .sp-details {

@@ -24,20 +24,20 @@
   }
   
   .pheader-logo {
-    width: 12rem;
+    width: 120px;
   }
   
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 890px) {
     .pheader-container {
     width: 100%;
     }
     .pheader{
     width:90%;
-    height: 50px;
+    height: 60px;
     }
     .pheader-logo{
-      width: 5rem;
+      width: 100px;
     }
    
   }
