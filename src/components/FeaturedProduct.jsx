@@ -48,7 +48,7 @@ function FeaturedProduct({ addToCart, addToWish }) {
   return (
     <div className="featured-products-600px">
       <div className="featured-products">
-        {currentItems.map(item => (
+        {currentItems.map(item => ( 
           <div key={item.id} className="product">
             <Link to={`/products/${item.slug}`} state={{items:item }}>
               <img className="product-image" src={item.image} alt={item.name} />
@@ -57,7 +57,7 @@ function FeaturedProduct({ addToCart, addToWish }) {
               <h3 className="product-name">
                 <Link to={`/products/${item.slug}`} state={{items:item}}>
                   {item.name}
-                </Link>
+                </Link> 
               </h3>
               <p className="product-size">{item.size}</p>
               <p className="product-price">{item.price}</p>

@@ -15,9 +15,9 @@
   transition: 0.5s;
 }
 
-.featured-products { 
+.featured-products {
   margin: 3vh 0;
-  width: 80%;
+  width: 80%; 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1vw;
@@ -33,7 +33,7 @@
   align-items: center;
 }
 
-.product-details{
+.product-details {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -74,50 +74,53 @@
   margin: 0 8px 8px 0;
   font-size: 1rem;
 }
- 
-.padd-to-cart, .padd-to-wish {
-  all:unset;
+
+.padd-to-cart,
+.padd-to-wish {
+  all: unset;
   text-align: center;
   background-color: #ffffff0f;
   border-right: 1px solid #ffffff1a;
   border-bottom: 1px solid #ffffff1a;
-  max-width:60px;
-  padding:0 12px;
-  
+  min-width: 40px;
+  max-width: 60px;
+  padding: 0 12px;
 }
 
-.padd-to-cart{
+.padd-to-cart {
   border-radius: 0 20px 20px 0;
 }
 
-.padd-to-wish{
+.padd-to-wish {
   border-radius: 20px 0 0 20px;
   margin-right: 3px;
 }
 
-.padd-to-cart img, .padd-to-wish img {
-  padding: 4px 0 0 0;
-  width:30px;
-  
+.padd-to-cart img,
+.padd-to-wish img {
+  padding: 3px 0 0 0;
+  width: 30px;
+  height: 28px;
 }
 
-.padd-to-cart:hover, .padd-to-wish:hover {
+.padd-to-cart:hover,
+.padd-to-wish:hover {
   background-color: #ffffff20;
   transition: 0.5s;
   cursor: pointer;
 }
 
 .pagination > img {
-  border:1px solid #ffffff1a;
+  border: 1px solid #ffffff1a;
   border-radius: 0 10px 10px 0;
   padding: 5px 25px;
   margin: 2px;
 }
-.prev-page{
+.prev-page {
   transform: rotate(180deg);
 }
 
-@media only screen and (max-width:1290px) {
+@media only screen and (max-width: 1290px) {
   .featured-products {
     margin: 2vh 0;
     display: grid;
@@ -127,29 +130,25 @@
 }
 
 @media only screen and (max-width: 890px) {
-
   .product {
-  max-width: 450px;
-  min-width: 200px;
+    max-width: 450px;
+    min-width: 200px;
   }
-   .featured-products {
+  .featured-products {
     display: flex;
     flex-direction: column;
   }
 }
 
 @media only screen and (max-width: 680px) {
-  .featured-products-600px {
-  }
- 
-  .product {
-  }
-  .padd-to-cart,.padd-to-wish {
-    width:10px;
-    padding:3px 30px 0 10px;
-  }
-  .padd-to-cart>img,.padd-to-wish>img{
-    width: 25px;
 
-}
+  .padd-to-cart,
+  .padd-to-wish {
+    width: 10px;
+    
+  }
+  .padd-to-cart img,
+  .padd-to-wish img {
+    width: 25px;
+  }
 }

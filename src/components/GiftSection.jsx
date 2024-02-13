@@ -1,11 +1,13 @@
 import "../styles/giftsection.css";
 import GiftProducts from "../data/GiftProducts.jsx";
+import addToCartImg from "../assets/cart-product.svg";
+import wishlistImg from "../assets/heart2.svg";
 import { useState } from "react";
 import { toast } from "sonner"; 
 import { Link } from "react-router-dom";
 
 
-function GiftSection({ giftAddToCart }) {
+function GiftSection({ giftAddToCart, addToWish }) {
   const giftSubtitles =
     "As the coffee shop market becomes more popular, the number of cafe websites is growing. The internet and social media play an important role in finding new customers.";
 
@@ -13,7 +15,7 @@ function GiftSection({ giftAddToCart }) {
 
   return ( 
     <div className="gift-main-container">
-      <div className="gift-container">
+      <div className="gift-container"> 
         <div className="gift-bg-image"></div>
         <div className="gift-info">
           <h3 className="gift-boxes-text">Gift Boxes</h3>
@@ -36,15 +38,14 @@ function GiftSection({ giftAddToCart }) {
                 <h3 className="gift-size">{item.size}</h3>
                 <h3 className="gift-price">{item.price}</h3>
 
-                <button
-                  className="add-to-cart"
-                  onClick={() => {
-                    giftAddToCart(item);
-                    toast.success('Added to Cart',  { duration: 1000 } );
-                  }}
-                >
-                  Add to Cart
+                <div>
+                <button className="gift-padd-to-wish" onClick={() => { addToWish(item); toast.success("Added to Wishlist", { duration: 1000 }); }}>
+                  <img src={wishlistImg} alt="Add to Wishlist" />
                 </button>
+                <button className="gift-padd-to-cart" onClick={() => { giftAddToCart(item); toast.success("Added to Cart", { duration: 1000 }); }}>
+                  <img src={addToCartImg} alt="Add to Cart" />
+                </button>
+              </div>
                
               </div>
             </div>

@@ -21,7 +21,6 @@ function SingleProduct() {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
-
   const addToCart = (product) => {
     const existingProduct = cartItems.find((elem) => elem.id === product.id);
     if (existingProduct) {
@@ -37,23 +36,27 @@ function SingleProduct() {
     }
   };
 
-
   const [wishItems, setWishItems] = useState(() => {
-    const savedWishItems = localStorage.getItem('wishItems');
+    const savedWishItems = localStorage.getItem("wishItems");
     return savedWishItems ? JSON.parse(savedWishItems) : [];
   });
-  
+
   useEffect(() => {
-    localStorage.setItem('wishItems', JSON.stringify(wishItems));
+    localStorage.setItem("wishItems", JSON.stringify(wishItems));
   }, [wishItems]);
 
-
   const addToWish = (product) => {
-    const existingWishProduct = wishItems.find(elem => elem.id === product.id);
+    const existingWishProduct = wishItems.find(
+      (elem) => elem.id === product.id
+    );
     if (existingWishProduct) {
-      setWishItems(wishItems.map(elem => 
-        elem.id === product.id ? { ...elem, wishQuantity: elem.wishQuantity + 1 } : elem
-      ));
+      setWishItems(
+        wishItems.map((elem) =>
+          elem.id === product.id
+            ? { ...elem, wishQuantity: elem.wishQuantity + 1 }
+            : elem
+        )
+      );
     } else {
       setWishItems([...wishItems, { ...product, wishQuantity: 1 }]);
     }
@@ -92,23 +95,33 @@ function SingleProduct() {
           onDelete={onDelete}
         />
       )}
-      <Header cartCount={cartItems.length} wishCount={wishItems.length} setCartVisible={setCartVisible} />
+      <Header
+        cartCount={cartItems.length}
+        wishCount={wishItems.length}
+        setCartVisible={setCartVisible}
+      />
 
       <div className="single-product-container">
         <div className="sp-container">
-          <div className="sp-img-container">
-            <img src={items.image} className="sp-img" />
+          
+            <div className="sp-img-container">
+              <img src={items.image} className="sp-img" />
+            
           </div>
           <div className="sp-details">
             <h3 className="sp-name">{items.name}</h3>
             <p className="sp-size">{items.size}</p>
             <p className="sp-price">{items.price}</p>
             <div className="sp-desc">{items.desc}</div>
-            <div className="quantity-text">Quantity:</div> 
+            <div className="quantity-text">Quantity:</div>
             <div className="sp-counter">
-              <button className="buttonminus" onClick={minusItem}>-</button>
+              <button className="buttonminus" onClick={minusItem}>
+                -
+              </button>
               <p>{itemQuantity}</p>
-              <button className="buttonplus" onClick={plusItem}>+</button>
+              <button className="buttonplus" onClick={plusItem}>
+                +
+              </button>
             </div>
             <button
               className="sp-add-to-cart"

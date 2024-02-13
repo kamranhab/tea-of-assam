@@ -5,7 +5,7 @@ import Header from "../components/Header.jsx";
 import BottomBar from "../components/BottomBar.jsx";
 import Footer from "../components/Footer.jsx";
 import CartPop from "../components/CartPop.jsx";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; 
 import { toast } from "sonner";
 import addToCartImg from "../assets/cart-product.svg"
 import wishlistImg from "../assets/heart.svg"
