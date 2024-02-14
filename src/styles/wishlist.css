@@ -54,6 +54,8 @@
 
 .wish-product-image {
   height: 25vh;
+  border-radius:15px;
+  padding: 10px;
 }
 
 .wish-product-category {
@@ -64,7 +66,7 @@
 }
 
 .wish-product-price {
-  color: #e13816;
+  color: #5eeaa9;
   font-weight: 80;
   margin: 0 8px 8px 0;
 }

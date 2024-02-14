@@ -20,7 +20,6 @@
   grid-template-columns: 1fr 2fr;
 }
 
-
 .sp-img-container {
   display: flex;
   height: 30vw;
@@ -41,7 +40,7 @@
 .sp-img {
   height: 25vw;
   width: 25vw;
-  padding:10px;
+  padding: 10px;
   border-radius: 20px;
 }
 
@@ -53,7 +52,7 @@
 }
 
 .sp-price {
-  color: #e13816;
+  color: #5eeaa9;
   font-weight: 80;
   margin: 0 8px 8px 0;
   font-size: 1.1rem;
@@ -99,7 +98,6 @@
   width: 105px;
   padding: 6px 10px;
   border-radius: 20px;
-  
 }
 .sp-counter > p {
   font-size: 1rem;
@@ -114,18 +112,16 @@
 .sp-counter > button {
   all: unset;
   border-style: none;
-  height:100%;
+  height: 100%;
   color: #fff;
   cursor: pointer;
   padding: 0 10px;
 }
-.sp-counter >.buttonmius {
+.sp-counter > .buttonmius {
   border-right: 1px solid rgba(209, 213, 219, 0.3);
-  }
-  
+}
 
 @media screen and (max-width: 890px) {
-
   .sp-container {
     grid-template-columns: 1fr;
   }
@@ -136,39 +132,35 @@
   }
 
   .sp-img-container {
-    width:50vw;
-    height:50vw;
+    width: 50vw;
+    height: 50vw;
   }
 
-  .sp-img{
+  .sp-img {
     height: 100%;
     width: 100%;
   }
-  
 }
 
 @media screen and (max-width: 640px) {
-
-    .sp-container {
-      flex-direction: column;
-      justify-content: center;
-      width: 85%;
-    }
-    .sp-details {
-      margin-top: 20px;
-      width: 100%;
-      padding: 0;
-    }
-  
-    .sp-img-container {
-      width:100%;
-      height:80vw;
-    }
-  
-    .sp-img{
-      height: 100%;
-      width: 100%;
-    }
-    
-  
+  .sp-container {
+    flex-direction: column;
+    justify-content: center;
+    width: 85%;
   }
+  .sp-details {
+    margin-top: 20px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .sp-img-container {
+    width: 100%;
+    height: 80vw;
+  }
+
+  .sp-img {
+    height: 100%;
+    width: 100%;
+  }
+}
